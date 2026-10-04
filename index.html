@@ -258,42 +258,39 @@
 
   /* ---------- PRICING ---------- */
   .pricing{background:var(--bg-alt); padding-top:60px;}
-  .price-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-  }
-  @media (max-width:760px){.price-grid{grid-template-columns:1fr;}}
   .price-card{
     background:#fff;
     border-radius:var(--radius);
-    padding:44px 38px;
+    padding:48px 52px;
     border:1px solid var(--line);
   }
-  .price-card.featured{
+  .price-wide{
+    width:100%;
     border:2px solid var(--accent);
-    position:relative;
+    display:grid;
+    grid-template-columns:minmax(260px,1fr) 2fr;
+    gap:56px;
+    align-items:center;
   }
-  .price-card.featured::before{
-    content:"Más popular";
-    position:absolute;
-    top:-13px; left:38px;
-    background:var(--accent);
-    color:#fff;
-    font-size:0.72rem;
-    font-weight:700;
-    padding:4px 12px;
-    border-radius:999px;
+  .price-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap:36px;
+  }
+  @media (max-width:900px){
+    .price-wide{grid-template-columns:1fr; gap:32px; padding:40px 28px;}
+  }
+  @media (max-width:600px){
+    .price-features{grid-template-columns:1fr;}
   }
   .price-card h3{font-size:1.2rem; margin-bottom:8px;}
   .price-tag{font-size:2.4rem; font-weight:700; margin:14px 0 8px; letter-spacing:-0.02em;}
   .price-tag small{font-size:1rem; font-weight:500; color:var(--text-muted);}
-  .price-card p.desc{color:var(--text-muted); font-size:0.94rem; margin-bottom:24px;}
+  .price-card p.desc{color:var(--text-muted); font-size:0.94rem; margin-bottom:0;}
   .price-card li{
     display:flex; gap:10px; align-items:flex-start;
     font-size:0.92rem; padding:7px 0; color:var(--text);
   }
-  .price-card .pill{width:100%; text-align:center; margin-top:12px;}
 
   /* ---------- CONTACT ---------- */
   .contact{background:var(--bg); text-align:center;}
@@ -527,32 +524,25 @@
 <section class="pricing" id="precios">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Planes</p>
+      <p class="eyebrow">Plan</p>
       <h2>Precios claros, sin permanencia</h2>
     </div>
-    <div class="price-grid">
-      <div class="price-card reveal">
-        <h3>Tarjeta NFC</h3>
-        <div class="price-tag">39€ <small>pago único</small></div>
-        <p class="desc">Ideal si solo quieres empezar a acumular reseñas ya, sin compromiso mensual.</p>
-        <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> 1 tarjeta NFC personalizada</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Enlace directo a tu ficha de Google</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Soporte para configurarla</li>
-        </ul>
-        <a href="#contacto" class="pill pill-outline">Elegir</a>
-      </div>
-      <div class="price-card featured reveal reveal-1">
+    <div class="price-card price-wide reveal">
+      <div class="price-main">
         <h3>SEO Maps + Tarjeta NFC</h3>
         <div class="price-tag">59€ <small>/ mes</small></div>
         <p class="desc">El plan completo: posicionamiento activo en Google Maps + tarjeta NFC incluida.</p>
-        <ul>
+      </div>
+      <ul class="price-features">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Primer diagnóstico completo gratis</strong></li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Optimización y mantenimiento mensual</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición por zonas en Google Maps</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuestas automáticas a tus reseñas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Historial de reseñas: nota media y reseñas sin responder</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Comparación con tu competencia, siempre actualizada</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta NFC incluida</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Informe mensual de resultados</li>
-        </ul>
-        <a href="#contacto" class="pill pill-accent">Elegir</a>
-      </div>
+      </ul>
     </div>
   </div>
 </section>
