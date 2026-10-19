@@ -3,7 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nornorte - SEO Google Maps</title>
+<title>Nornorte · Posicionamiento en Google Maps y reseñas para negocios locales</title>
+<meta name="description" content="Cuidamos tu ficha de Google cada semana, medimos tu posición en 25 zonas de tu barrio y te damos una tarjeta NFC para pedir reseñas. 59 €/mes IVA incluido, sin permanencia. Sin promesas de posiciones.">
+<link rel="canonical" href="https://www.nornorte.es/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nornorte · Que tus clientes te encuentren en Google Maps">
+<meta property="og:description" content="Ficha de Google cuidada cada semana, medición en 25 zonas y tarjeta NFC para reseñas reales. 59 €/mes, sin permanencia.">
+<meta property="og:url" content="https://www.nornorte.es/">
+<meta property="og:image" content="https://www.nornorte.es/guia/compartir.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nornorte",
+  "url": "https://www.nornorte.es/",
+  "email": "gerencia@nornorte.es",
+  "logo": "https://www.nornorte.es/favicon-192x192.png",
+  "image": "https://www.nornorte.es/guia/compartir.jpg",
+  "description": "Posicionamiento local en Google Maps, gestión de reseñas y tarjetas NFC para negocios locales.",
+  "areaServed": { "@type": "Country", "name": "España" },
+  "priceRange": "59 €/mes",
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "SEO Maps + Tarjeta NFC",
+    "price": "59",
+    "priceCurrency": "EUR",
+    "description": "Plan mensual sin permanencia, IVA incluido."
+  }
+}
+</script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png">
@@ -336,6 +366,16 @@
   .btn-submit:hover{background:#255ac9; transform:translateY(-3px); box-shadow:0 10px 20px -8px rgba(47,111,235,0.5);}
   .btn-submit:active{transform:translateY(-1px); transition-duration:0.1s;}
   .form-note{font-size:0.82rem; color:var(--text-muted); margin-top:-8px; text-align:center;}
+  .form-legal{font-size:0.75rem; color:var(--text-muted); text-align:center; line-height:1.45;}
+  .form-legal a{color:inherit;}
+  .price-note{max-width:760px; margin:20px auto 0; text-align:center; font-size:0.85rem; color:var(--text-muted);}
+  .price-note a{color:inherit;}
+  .faq-list{max-width:760px; margin:0 auto; display:grid; gap:12px;}
+  .faq-list details{background:var(--bg-alt); border-radius:16px; padding:18px 22px;}
+  .faq-list summary{font-weight:600; cursor:pointer; color:var(--ink);}
+  .faq-list details p{margin-top:10px; color:var(--text-muted);}
+  .footer-note{font-size:0.75rem; color:var(--text-muted); padding-top:0; padding-bottom:24px;}
+  footer a{color:inherit;}
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -397,7 +437,7 @@
   <div class="nav-inner">
     <div class="wordmark"><span>Nor</span>norte</div>
     <div class="nav-actions">
-      <a href="https://nornorte-panel.vercel.app/escaneo" class="nav-guide">Escaneo gratis</a>
+      <a href="https://panel.nornorte.es/escaneo" class="nav-guide">Escaneo gratis</a>
       <a href="/guia/" class="nav-guide">Guía gratis</a>
       <a href="#contacto" class="pill pill-dark">Contáctanos</a>
     </div>
@@ -407,8 +447,8 @@
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow reveal">SEO local · Google Maps · Reseñas</p>
-    <h1 class="reveal reveal-1">Que tu negocio sea el primero que ve el cliente.</h1>
-    <p class="lede reveal reveal-2">Optimizamos tu ficha de Google Maps y ponemos una tarjeta NFC en tu mostrador para que cada visita se convierta en una reseña de 5 estrellas.</p>
+    <h1 class="reveal reveal-1">Que tus clientes te encuentren en Google Maps.</h1>
+    <p class="lede reveal reveal-2">Cuidamos tu ficha de Google cada semana y ponemos una tarjeta NFC en tu mostrador para que tus clientes te dejen su opinión con un toque.</p>
     <div class="cta-row reveal reveal-3">
       <a href="#contacto" class="pill pill-accent">Contáctanos</a>
       <a href="#servicios" class="pill pill-outline">Ver cómo funciona</a>
@@ -428,7 +468,7 @@
             <div class="results-name">Tu negocio</div>
             <div class="results-meta"><span class="results-stars">★★★★★</span> 128 reseñas · A 4 min</div>
           </div>
-          <div class="results-tag">Ficha optimizada</div>
+          <div class="results-tag">Ejemplo ilustrativo</div>
         </div>
         <div class="results-row">
           <div class="results-rank muted">2</div>
@@ -452,8 +492,8 @@
 <section class="statement">
   <div class="wrap reveal">
     <p class="eyebrow">El problema</p>
-    <h2>Tu cliente ya te está buscando. Encuentra a otro antes que a ti.</h2>
-    <p>La mayoría de negocios locales tienen una ficha de Google a medio rellenar, pocas reseñas y cero actividad. Google lo nota y coloca primero al que sí la cuida.</p>
+    <h2>Tu cliente ya te está buscando. ¿Te encuentra a ti?</h2>
+    <p>Muchas fichas de Google están a medio rellenar, con pocas reseñas y sin actividad. Quien busca compara, y elige la que transmite confianza.</p>
   </div>
 </section>
 
@@ -469,11 +509,11 @@
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="#2f6feb" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" stroke="#2f6feb" stroke-width="1.7"/></svg>
         </div>
         <h3>Posicionamiento en Google Maps</h3>
-        <p>Optimizamos y mantenemos tu ficha mes a mes para que aparezcas en las primeras posiciones de tu zona.</p>
+        <p>Revisamos y mantenemos tu ficha cada semana y medimos tu posición en 25 zonas de tu barrio. No prometemos puestos: te enseñamos con datos qué hacemos y cómo evoluciona.</p>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google completa y optimizada</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Publicaciones y fotos periódicas</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Informe mensual de posición y visitas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google completa y revisada</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Informe mensual de tu posición y tus reseñas</li>
         </ul>
       </div>
       <div class="service reveal reveal-1">
@@ -481,11 +521,11 @@
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#2f6feb" stroke-width="1.7"/><path d="M9 7h6M9 11h6" stroke="#2f6feb" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="1.4" fill="#2f6feb"/></svg>
         </div>
         <h3>Tarjetas NFC para reseñas</h3>
-        <p>El cliente acerca el móvil a la tarjeta y se le abre directamente el cuadro para dejarte 5 estrellas en Google.</p>
+        <p>Tu cliente acerca el móvil a la tarjeta y se le abre directamente la página para dejarte su opinión en Google. Sin buscar nada.</p>
         <ul>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta física con chip NFC</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Un toque, sin apps ni cuentas</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Más reseñas → mejor posición en Maps</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Un toque, sin apps ni buscar tu negocio</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Más fácil pedir reseñas reales, a todos por igual</li>
         </ul>
       </div>
     </div>
@@ -512,12 +552,12 @@
       <div class="step reveal reveal-1">
         <div class="step-num">3</div>
         <h3>Implementar sistema</h3>
-        <p>Ponemos en marcha tu tarjeta NFC y el sistema de respuestas automáticas a reseñas.</p>
+        <p>Ponemos en marcha tu tarjeta NFC y empezamos a responder tus reseñas.</p>
       </div>
       <div class="step reveal reveal-2">
         <div class="step-num">4</div>
-        <h3>Subes en el ranking</h3>
-        <p>Seguimos ajustando tu ficha cada mes mientras subes puestos y llegan más clientes.</p>
+        <h3>Seguimiento</h3>
+        <p>Cada semana medimos y cuidamos tu ficha. En tu panel ves qué hemos hecho y cómo cambia tu posición.</p>
       </div>
     </div>
   </div>
@@ -526,15 +566,15 @@
 <section class="automation">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Novedad</p>
-      <h2>Tus reseñas, respondidas solas</h2>
+      <p class="eyebrow">Reseñas</p>
+      <h2>Todas tus reseñas, respondidas</h2>
     </div>
     <div class="service reveal reveal-1">
-      <h3>Respuesta automática a reseñas</h3>
-      <p>Conectamos tu ficha de Google a un sistema que contesta las reseñas de tus clientes con el tono de tu negocio, sin que tú ni nadie tenga que estar pendiente del móvil.</p>
+      <h3>Respuestas con el tono de tu negocio</h3>
+      <p>Redactamos la respuesta a cada reseña nueva con el tono de tu negocio. Una persona la revisa antes de publicarla, y las negativas con más cuidado.</p>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Reseñas de 4-5 estrellas, contestadas al instante</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Reseñas negativas, revisadas por ti antes de publicarse</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Todas las reseñas nuevas, buenas y malas</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Revisión humana antes de publicar cada respuesta</li>
         <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tono adaptado a la voz de tu negocio</li>
       </ul>
     </div>
@@ -548,7 +588,7 @@
         <p class="eyebrow" style="color:#dce8ff;">Escaneo gratis · 9 zonas</p>
         <h2>¿Te encuentran en Google Maps cuando te buscan cerca?</h2>
         <p style="color:#eaf1fd;">Buscamos lo que buscaría tu cliente desde 9 puntos alrededor de tu negocio y te enseñamos en qué posición sales en cada uno y quién aparece por delante. Gratis y en un minuto.</p>
-        <a href="https://nornorte-panel.vercel.app/escaneo" class="pill" style="background:#fff; color:#0d0d0f;">Hacer mi escaneo gratis</a>
+        <a href="https://panel.nornorte.es/escaneo" class="pill" style="background:#fff; color:#0d0d0f;">Hacer mi escaneo gratis</a>
       </div>
     </div>
   </div>
@@ -577,19 +617,37 @@
     <div class="price-card price-wide reveal">
       <div class="price-main">
         <h3>SEO Maps + Tarjeta NFC</h3>
-        <div class="price-tag">59€ <small>/ mes</small></div>
-        <p class="desc">El plan completo: posicionamiento activo en Google Maps + tarjeta NFC incluida.</p>
+        <div class="price-tag">59€ <small>/ mes, IVA incluido</small></div>
+        <p class="desc">El plan completo: cuidado semanal de tu ficha de Google + tarjeta NFC incluida. Sin permanencia: cancelas cuando quieras.</p>
       </div>
       <ul class="price-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Primer diagnóstico completo gratis</strong></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Optimización y mantenimiento mensual</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición por zonas en Google Maps</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuestas automáticas a tus reseñas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana en tu ficha</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición en 25 zonas, cada semana</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas nuevas</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Historial de reseñas: nota media y reseñas sin responder</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Comparación con tu competencia, siempre actualizada</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Comparación con tu competencia, cada semana</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta NFC incluida</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Informe mensual de resultados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu propio panel e informe mensual</li>
       </ul>
+    </div>
+    <p class="price-note">Nadie puede garantizar un puesto concreto en Google, y nosotros tampoco lo hacemos: nos comprometemos con el trabajo y con medirlo con honestidad. Servicio para negocios y profesionales. <a href="/condiciones/">Condiciones del servicio</a>.</p>
+  </div>
+</section>
+
+<section class="faq" id="preguntas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Lo que nos suelen preguntar</h2>
+    </div>
+    <div class="faq-list reveal reveal-1">
+      <details><summary>¿Me garantizáis el primer puesto en Google Maps?</summary><p>No. Nadie puede garantizar una posición concreta: el orden lo decide Google. Lo que sí hacemos es trabajar tu ficha cada semana, medir tu posición en 25 zonas en las mismas condiciones y enseñarte los resultados con datos.</p></details>
+      <details><summary>¿Necesito daros la contraseña de mi cuenta de Google?</summary><p>Nunca. Nos añades como gestores de tu Perfil de Empresa con el correo gerencia@nornorte.es. Tú sigues siendo el propietario y puedes quitarnos el acceso cuando quieras.</p></details>
+      <details><summary>¿Quién responde a mis reseñas?</summary><p>Redactamos cada respuesta con el tono de tu negocio y una persona la revisa antes de publicarla. Las negativas, con más cuidado. Nunca ofrecemos descuentos ni regalos a cambio de reseñas: Google lo prohíbe.</p></details>
+      <details><summary>¿Hay permanencia?</summary><p>No. Se paga cada mes y puedes darte de baja cuando quieras. El servicio sigue activo hasta el final del mes ya pagado.</p></details>
+      <details><summary>¿Qué pasa con la tarjeta NFC si me doy de baja?</summary><p>Te la quedas. Sigue funcionando igual, porque lleva a tu propio enlace de reseñas de Google.</p></details>
+      <details><summary>¿Qué incluye el diagnóstico gratis?</summary><p>Un escaneo de 25 zonas alrededor de tu negocio, cómo estás frente a los negocios que salen por delante, una revisión de tu ficha y la primera tarea que haríamos. Te lo quedas aunque no contrates nada.</p></details>
     </div>
   </div>
 </section>
@@ -623,16 +681,18 @@
         <textarea id="mensaje" name="mensaje" placeholder="Ej. quiero aparecer antes en Google Maps en mi ciudad"></textarea>
       </div>
       <button type="submit" class="btn-submit">Contáctanos</button>
-      <p class="form-note">Te contestamos en menos de 24h. También puedes escribirnos directamente por <a href="https://wa.me/34600000000?text=%C2%A1Hola%21%2C%20me%20gustar%C3%ADa%20que%20trabaj%C3%A1semos%20juntos" style="color:var(--accent); font-weight:600;" target="_blank" rel="noopener">WhatsApp</a>.</p>
+      <p class="form-note">Te contestamos en 1 día laborable. También puedes escribirnos a <a href="mailto:gerencia@nornorte.es" style="color:var(--accent); font-weight:600;">gerencia@nornorte.es</a>.</p>
+      <p class="form-legal">Responsable: Nornorte. Usamos tus datos solo para responder a tu consulta. Puedes acceder a ellos, corregirlos o borrarlos escribiendo a gerencia@nornorte.es. Más información en el <a href="/privacidad/">aviso de privacidad</a>.</p>
     </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap footer-inner">
-    <span>Nornorte</span>
-    <span>SEO local y tarjetas NFC para reseñas · España · <a href="/guia/" style="text-decoration:none;">Guía gratis</a></span>
+    <span>Nornorte · SEO local y tarjetas NFC para reseñas · <a href="mailto:gerencia@nornorte.es">gerencia@nornorte.es</a></span>
+    <span><a href="/guia/">Guía gratis</a> · <a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/condiciones/">Condiciones</a></span>
   </div>
+  <div class="wrap footer-note">Nornorte es un servicio independiente y no está afiliado, patrocinado ni respaldado por Google. Google y Google Maps son marcas de Google LLC. El ejemplo de búsqueda de esta página es ilustrativo.</div>
 </footer>
 
 <script>
