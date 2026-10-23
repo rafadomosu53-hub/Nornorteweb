@@ -26,8 +26,8 @@
   "provider": { "@type": "Organization", "name": "Nornorte", "url": "https://www.nornorte.es/", "email": "gerencia@nornorte.es" },
   "areaServed": [{ "@type": "AdministrativeArea", "name": "Provincia de Córdoba" }, { "@type": "Country", "name": "España" }],
   "offers": [
-    { "@type": "Offer", "name": "Puesta en marcha (incluye 5 adhesivos)", "price": "350", "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Mantenimiento mensual", "price": "75", "priceCurrency": "EUR" }
+    { "@type": "Offer", "name": "Puesta en marcha (incluye 5 adhesivos)", "price": "350", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "350", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+    { "@type": "Offer", "name": "Mantenimiento mensual", "price": "75", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "75", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } }
   ]
 }
 </script>
@@ -96,6 +96,7 @@
   .price-row span{color:var(--text);}
   .price-row small{display:block; color:var(--text-muted); font-size:0.88rem;}
   .price-row strong{font-size:1.5rem; color:var(--ink); white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .price-row strong .iva{display:inline; font-size:0.8rem; font-weight:600; color:var(--text-muted);}
   .price-note{color:var(--text-muted); font-size:0.9rem; margin-top:14px;}
   .combo{margin-top:20px; background:var(--accent-soft); border-radius:16px; padding:16px 18px; font-size:0.95rem;}
   .combo a{color:var(--accent); font-weight:600;}
@@ -197,11 +198,11 @@
       <p class="sec-lede">La puesta en marcha incluye el diseño del adhesivo, la creación de la mini web y la programación de los adhesivos. El mantenimiento cubre el alojamiento de la mini web y los cambios que nos pidas.</p>
     </div>
     <div class="price">
-      <div class="price-row"><span>Puesta en marcha<small>Diseño, mini web, programación y 5 adhesivos</small></span><strong>350 €</strong></div>
-      <div class="price-row"><span>Adhesivo adicional</span><strong>35 €</strong></div>
-      <div class="price-row"><span>Mantenimiento mensual<small>Alojamiento y cambios de horarios o textos</small></span><strong>75 €/mes</strong></div>
-      <p class="price-note">¿Necesitas muchos adhesivos, por ejemplo uno por habitación? Te hacemos precio por volumen. La puesta en marcha no cambia.</p>
-      <p class="combo">¿Quieres también que te encuentren en Google Maps? Combínalo con nuestro <a href="/">servicio de SEO local</a> (59 €/mes).</p>
+      <div class="price-row"><span>Puesta en marcha<small>Diseño, mini web, programación y 5 adhesivos</small></span><strong>350 € <small class="iva">+ IVA</small></strong></div>
+      <div class="price-row"><span>Adhesivo adicional</span><strong>35 € <small class="iva">+ IVA</small></strong></div>
+      <div class="price-row"><span>Mantenimiento mensual<small>Alojamiento y cambios de horarios o textos</small></span><strong>75 €/mes <small class="iva">+ IVA</small></strong></div>
+      <p class="price-note">Precios sin IVA (21 %). ¿Necesitas muchos adhesivos, por ejemplo uno por habitación? Te hacemos precio por volumen. La puesta en marcha no cambia.</p>
+      <p class="combo">¿Quieres también que te encuentren en Google Maps? Combínalo con nuestro <a href="/">servicio de SEO local</a> (59 €/mes, IVA incluido).</p>
     </div>
   </div>
 </section>
