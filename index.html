@@ -426,9 +426,9 @@
 
   /* ---------- GUÍA GRATIS ---------- */
   .nav-actions{display:flex; gap:10px; align-items:center;}
-  .nav-guide{font-weight:600; font-size:0.95rem; color:var(--accent); text-decoration:none; padding:8px 4px;}
+  .nav-guide{font-weight:600; font-size:0.95rem; color:var(--accent); text-decoration:none; padding:8px 4px; white-space:nowrap;}
   .nav-guide:hover{text-decoration:underline;}
-  @media (max-width:420px){.nav-guide{display:none;}}
+  @media (max-width:640px){.nav-guide{display:none;}}
   .guide{padding:0 0 120px;}
   @media (max-width:760px){.guide{padding:0 0 80px;}}
   .guide-card{display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center; background:var(--navy,#0b1d33); color:#fff; border-radius:var(--radius); padding:48px 56px;}
@@ -447,6 +447,7 @@
     <div class="nav-actions">
       <a href="https://panel.nornorte.es/escaneo" class="nav-guide">Escaneo gratis</a>
       <a href="/guia/" class="nav-guide">Guía gratis</a>
+      <a href="/hoteles/" class="nav-guide">Hoteles</a>
       <a href="#contacto" class="pill pill-dark">Contáctanos</a>
     </div>
   </div>
@@ -701,7 +702,7 @@
 <footer>
   <div class="wrap footer-inner">
     <span>Nornorte · SEO local y tarjetas NFC para reseñas · Córdoba · <a href="mailto:gerencia@nornorte.es">gerencia@nornorte.es</a></span>
-    <span><a href="/guia/">Guía gratis</a> · <a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/condiciones/">Condiciones</a></span>
+    <span><a href="/guia/">Guía gratis</a> · <a href="/hoteles/">Nornorte Hoteles</a> · <a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/condiciones/">Condiciones</a></span>
   </div>
   <div class="wrap footer-note">Nornorte es un servicio independiente y no está afiliado, patrocinado ni respaldado por Google. Google y Google Maps son marcas de Google LLC. El ejemplo de búsqueda de esta página es ilustrativo.</div>
 </footer>
