@@ -31,14 +31,11 @@
   "areaServed": [
     { "@type": "Country", "name": "España" }
   ],
-  "priceRange": "59 €/mes",
-  "makesOffer": {
-    "@type": "Offer",
-    "name": "SEO Maps + Tarjeta NFC",
-    "price": "59",
-    "priceCurrency": "EUR",
-    "description": "Plan mensual sin permanencia, IVA incluido."
-  }
+  "priceRange": "300 € + 75 €/mes (+ IVA)",
+  "makesOffer": [
+    { "@type": "Offer", "name": "Puesta en marcha (pago único)", "price": "300", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "300", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+    { "@type": "Offer", "name": "Cuota mensual desde el segundo mes, sin permanencia", "price": "75", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "75", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } }
+  ]
 }
 </script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -411,6 +408,17 @@
   .form-note{font-size:0.82rem; color:var(--text-muted); margin-top:-8px; text-align:center;}
   .form-legal{font-size:0.75rem; color:var(--text-muted); text-align:center; line-height:1.45;}
   .form-legal a{color:inherit;}
+  .lanzamiento{display:inline-block; background:#fff4d6; color:#9a6b00; font-size:0.75rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:5px 12px; border-radius:999px; margin-bottom:12px;}
+  .price-setup{margin:4px 0 14px; font-size:1rem; color:var(--text);}
+  .price-setup b{font-size:1.15rem;}
+  .arranque{max-width:1000px; margin:28px auto 0; background:#fff; border-radius:var(--radius); padding:36px 40px;}
+  .arranque h3{font-size:1.25rem; margin-bottom:6px;}
+  .arranque > p{color:var(--text-muted); margin-bottom:18px;}
+  .arranque ul{display:grid; grid-template-columns:1fr 1fr; gap:0 28px; list-style:none; padding:0; margin:0;}
+  .arranque li{display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-top:1px solid #e2e2e5; font-size:0.94rem;}
+  .arranque li svg{flex-shrink:0; margin-top:3px;}
+  .arranque .quedas{margin:18px 0 0; font-size:0.94rem; color:var(--text);}
+  @media (max-width:760px){.arranque{padding:28px 22px;} .arranque ul{grid-template-columns:1fr;}}
   .price-note{max-width:760px; margin:20px auto 0; text-align:center; font-size:0.85rem; color:var(--text-muted);}
   .price-note a{color:inherit;}
   .faq-list{max-width:760px; margin:0 auto; display:grid; gap:12px;}
@@ -652,8 +660,8 @@
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">1</div>
-        <h3>Diagnóstico</h3>
-        <p>Comprobamos que tu zona está libre y analizamos cómo apareces hoy en Google Maps frente a tu competencia.</p>
+        <h3>Análisis de oportunidad</h3>
+        <p>Gratis: comprobamos que tu zona está libre, calculamos lo que estás perdiendo y vemos cómo apareces frente a tu competencia.</p>
       </div>
       <div class="step reveal reveal-1">
         <div class="step-num">2</div>
@@ -724,28 +732,46 @@
 <section class="pricing" id="precios">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Plan</p>
-      <h2>Precio claro, plaza exclusiva</h2>
+      <p class="eyebrow">Precio de lanzamiento</p>
+      <h2>Para los 10 primeros negocios</h2>
     </div>
     <div class="price-card price-wide reveal">
       <div class="price-main">
-        <h3>SEO Maps + Tarjeta NFC</h3>
-        <div class="price-tag">59€ <small>/ mes, IVA incluido</small></div>
-        <p class="desc">Precio cerrado, plaza exclusiva en tu zona y lo hacemos todo nosotros: cuidado semanal de tu ficha de Google + tarjeta NFC incluida. Tú no tienes que aprender ninguna herramienta. Sin permanencia: cancelas cuando quieras.</p>
+        <span class="lanzamiento">Solo 10 plazas a este precio</span>
+        <h3>Nornorte: Google Maps + Tarjeta NFC</h3>
+        <div class="price-tag">75 € <small>/ mes + IVA</small></div>
+        <p class="price-setup" style="margin-top:-4px; color:var(--text-muted); font-size:0.9rem;">Desde el segundo mes</p>
+        <p class="price-setup"><b>300 €</b> + IVA de puesta en marcha, una sola vez</p>
+        <p class="desc">Plaza exclusiva en tu zona y lo hacemos todo nosotros. Si entras entre los 10 primeros, mantienes este precio mientras sigas con nosotros. Sin permanencia: te das de baja cuando quieras.</p>
       </div>
       <ul class="price-features">
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Exclusividad en tu zona y tipo de negocio</strong></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Diagnóstico gratis, con el cálculo de lo que estás perdiendo</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Análisis de oportunidad gratis: lo que estás perdiendo, en euros</strong></li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana en tu ficha</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición en 25 zonas, cada semana</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas nuevas, y a las antiguas sin contestar al empezar</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Historial de reseñas: nota media y reseñas sin responder</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Comparación con tu competencia, cada semana</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta NFC incluida</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> 1 tarjeta NFC incluida</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Llamada mensual para revisar resultados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Cambios por correo: respondemos en 1 día laborable</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu propio panel e informe mensual</li>
       </ul>
     </div>
-    <p class="price-note">No te prometemos lo que nadie puede prometer: el puesto en Google lo decide Google, y quien te garantice «salir el primero» no te está diciendo la verdad. Nosotros nos comprometemos con el trabajo y con medirlo con honestidad. Servicio para negocios y profesionales. <a href="/condiciones/">Condiciones del servicio</a>.</p>
+    <div class="arranque reveal">
+      <h3>Por qué hay una puesta en marcha</h3>
+      <p>El primer mes es el de más trabajo, y se nota desde la primera semana. Esto es lo que hacemos antes de empezar con el mantenimiento:</p>
+      <ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Análisis completo de 25 zonas para tu búsqueda principal y 2 más</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google optimizada: categorías, servicios, descripción, atributos, horarios y festivos</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas antiguas que siguen sin contestar</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Alta y revisión en Apple Maps, Bing y los directorios que importan</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu tarjeta NFC diseñada, programada y entregada</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu panel configurado y primera llamada con el plan de acción</li>
+      </ul>
+      <p class="quedas"><b>Todo se queda en tu ficha aunque un día te vayas.</b> Desde el segundo mes pagas solo el mantenimiento: 75 € + IVA al mes. ¿Tienes un hotel o alojamiento? Mira <a href="/hoteles/" style="color:var(--accent); font-weight:600;">Nornorte Hoteles</a>, que incluye todo esto y una mini web para tus huéspedes.</p>
+    </div>
+    <p class="price-note">Precios sin IVA (21 %). No te prometemos lo que nadie puede prometer: el puesto en Google lo decide Google, y quien te garantice «salir el primero» no te está diciendo la verdad. Nosotros nos comprometemos con el trabajo y con medirlo con honestidad. Servicio para negocios y profesionales. <a href="/condiciones/">Condiciones del servicio</a>.</p>
   </div>
 </section>
 
@@ -762,9 +788,11 @@
         <details><summary>¿Tengo que hacer algo yo?</summary><p>Casi nada. No es una aplicación que tengas que aprender a usar: el trabajo lo hacemos nosotros por un precio cerrado. Tú solo nos avisas de cambios (horarios, cierres, festivos), nos mandas alguna foto cuando quieras y pides la reseña con la tarjeta NFC.</p></details>
       <details><summary>¿Necesito daros la contraseña de mi cuenta de Google?</summary><p>Nunca. Nos añades como gestores de tu Perfil de Empresa con el correo gerencia@nornorte.es. Tú sigues siendo el propietario y puedes quitarnos el acceso cuando quieras.</p></details>
       <details><summary>¿Quién responde a mis reseñas?</summary><p>Las de 4 y 5 estrellas se responden de forma automática, cada semana, con un texto escrito con inteligencia artificial y el tono de tu negocio. Las de 1 a 3 estrellas nunca se publican solas: una persona revisa cada respuesta antes de publicarla y, si quieres, te la enseñamos antes. Nunca ofrecemos descuentos ni regalos a cambio de reseñas: Google lo prohíbe.</p></details>
-      <details><summary>¿Hay permanencia?</summary><p>No. Se paga cada mes y puedes darte de baja cuando quieras. El servicio sigue activo hasta el final del mes ya pagado.</p></details>
+      <details><summary>¿Hay permanencia?</summary><p>No. Pagas la puesta en marcha una vez (300 € + IVA) y, desde el segundo mes, 75 € + IVA al mes. Puedes darte de baja cuando quieras y el servicio sigue activo hasta el final del mes ya pagado.</p></details>
+        <details><summary>¿Por qué pago una puesta en marcha?</summary><p>Porque el primer mes es el de más trabajo: optimizamos tu ficha entera, respondemos todas tus reseñas antiguas, te damos de alta en otros mapas y directorios, programamos tu tarjeta NFC y configuramos tu panel. Es un pago único y todo ese trabajo se queda en tu ficha aunque te vayas.</p></details>
+        <details><summary>¿Qué es el precio de lanzamiento?</summary><p>Los 10 primeros negocios que entren pagan 300 € + IVA de puesta en marcha y 75 € + IVA al mes, y mantienen ese precio mientras sigan de alta. Después, el precio subirá para los nuevos clientes.</p></details>
       <details><summary>¿Qué pasa con la tarjeta NFC si me doy de baja?</summary><p>Te la quedas. Sigue funcionando igual, porque lleva a tu propio enlace de reseñas de Google.</p></details>
-      <details><summary>¿Qué incluye el diagnóstico gratis?</summary><p>El cálculo de cuánto dinero estás dejando de ganar al mes por no salir entre los primeros, un escaneo de 25 zonas alrededor de tu negocio, cómo estás frente a los negocios que salen por delante, una revisión de tu ficha y la primera tarea que haríamos. Te lo quedas aunque no contrates nada.</p></details>
+      <details><summary>¿Qué incluye el análisis de oportunidad gratis?</summary><p>El cálculo de cuánto dinero estás dejando de ganar al mes por no salir entre los primeros, un escaneo de 25 zonas alrededor de tu negocio, cómo estás frente a los negocios que salen por delante, una revisión de tu ficha y la primera tarea que haríamos. Te lo quedas aunque no contrates nada.</p></details>
     </div>
   </div>
 </section>
