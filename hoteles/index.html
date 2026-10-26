@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nornorte Hoteles: la información de tu hotel en el móvil del huésped</title>
-<meta name="description" content="Tarjeta NFC (adhesiva o de sobremesa) con el diseño de tu hotel que abre una mini web con wifi, horarios, servicios y reseñas. Para habitaciones, recepción, hall y buffet. Para alojamientos de toda España.">
+<title>Nornorte Hoteles: todo el servicio de Google Maps y una mini web para tus huéspedes</title>
+<meta name="description" content="Todo el servicio de Nornorte para la ficha de Google de tu alojamiento (publicaciones, reseñas, competencia, escaneo de 25 zonas, informe y llamada mensual) y, además, una mini web con tarjetas NFC para tus huéspedes. Para alojamientos de toda España.">
 <link rel="canonical" href="https://www.nornorte.es/hoteles/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nornorte Hoteles: la información de tu hotel en el móvil del huésped">
-<meta property="og:description" content="Una tarjeta NFC con el diseño de tu hotel. El huésped acerca el móvil y ve wifi, horarios, servicios y dónde dejar su opinión.">
+<meta property="og:title" content="Nornorte Hoteles: todo el servicio de Google Maps y una mini web para tus huéspedes">
+<meta property="og:description" content="Cuidamos la ficha de Google de tu alojamiento cada semana y, además, te damos una mini web con tarjetas NFC para tus huéspedes.">
 <meta property="og:url" content="https://www.nornorte.es/hoteles/">
 <meta property="og:image" content="https://www.nornorte.es/hoteles/tarjeta-nfc.jpg">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -81,6 +81,17 @@
   .step h3{font-size:1.15rem; margin-bottom:6px;}
   .step p{color:var(--text-muted);}
 
+  .incluye{display:grid; grid-template-columns:1.15fr 0.85fr; gap:20px; align-items:stretch;}
+  @media (max-width:860px){.incluye{grid-template-columns:1fr;}}
+  .inc-col{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px;}
+  .inc-extra{background:var(--accent-soft); border-color:transparent;}
+  .inc-tag{font-size:0.85rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;}
+  .incluye ul{list-style:none;}
+  .incluye li{display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-top:1px solid var(--line); font-size:0.97rem;}
+  .inc-extra li{border-top-color:rgba(47,111,235,.18);}
+  .incluye li:first-child{border-top:0;}
+  .incluye li svg{flex-shrink:0; margin-top:4px;}
+  .incluye b{color:var(--ink);}
   .grid2{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
   @media (max-width:800px){.grid2{grid-template-columns:1fr; gap:32px;}}
   .checks{list-style:none; display:grid; gap:12px;}
@@ -140,12 +151,12 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Nornorte Hoteles · Tarjeta NFC</p>
-      <h1>La información de tu hotel, en el móvil del huésped</h1>
-      <p class="lede">Una tarjeta NFC con el diseño de tu hotel, adhesiva o de sobremesa. El huésped acerca el móvil y ve el wifi, los horarios, los servicios y dónde dejar su opinión. Menos preguntas en recepción y más reseñas.</p>
+      <p class="eyebrow">Nornorte Hoteles · Google Maps + mini web</p>
+      <h1>Todo Nornorte para tu alojamiento. Y además, tu mini web para huéspedes.</h1>
+      <p class="lede">Cuidamos la ficha de Google de tu hotel o casa rural cada semana, con el mismo servicio completo que el resto de negocios Nornorte. Además, te damos una mini web con tarjetas NFC: el huésped acerca el móvil y ve el wifi, los horarios, los servicios y dónde dejar su opinión.</p>
       <div class="cta-row">
         <a href="#contacto" class="pill pill-accent">Quiero verlo en mi hotel</a>
-        <a href="#precio" class="pill pill-line">Ver precio</a>
+        <a href="#incluye" class="pill pill-line">Qué incluye</a>
       </div>
     </div>
     <div class="visual">
@@ -155,9 +166,39 @@
   </div>
 </header>
 
-<section>
+<section id="incluye">
   <div class="wrap">
-    <h2 class="sec-title">Así funciona</h2>
+    <h2 class="sec-title">No es solo una tarjeta: es todo Nornorte, más la mini web</h2>
+    <p class="sec-lede">Nornorte Hoteles incluye exactamente el mismo servicio de Google Maps que damos a cualquier negocio. Lo que se suma es la mini web con sus tarjetas, y por eso cuesta un poco más.</p>
+    <div class="incluye">
+      <div class="inc-col">
+        <p class="inc-tag">El servicio Nornorte completo</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Una publicación por semana en tu ficha de Google</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Respuesta a todas tus reseñas nuevas, y a las antiguas sin contestar al empezar</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Comparativa con tu competencia directa: vemos en qué te ganan y aplicamos lo que les funciona</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Escaneo de tu posición en 25 zonas, cada semana</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Ficha optimizada y alta en Apple Maps, Bing y los directorios que importan</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Tu propio panel, informe mensual y una llamada al mes</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Análisis de oportunidad gratis antes de empezar</span></li>
+        </ul>
+      </div>
+      <div class="inc-col inc-extra">
+        <p class="inc-tag">Y además, solo en Nornorte Hoteles</p>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span><b>Mini web para tus huéspedes</b>, en español e inglés: wifi, recepción, desayuno, servicios, qué hacer cerca y botones para opinar</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span><b>5 tarjetas NFC</b> con el diseño de tu hotel, programadas y listas para pegar</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Cambios en la mini web en 1 día laborable, sin coste</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span>Te decimos cuántas veces se abre la información de tu hotel</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec-title">Así funciona la mini web</h2>
     <p class="sec-lede">Sin apps, sin códigos y sin que el huésped tenga que descargar nada.</p>
     <div class="steps">
       <div class="step"><h3>Diseñamos tu tarjeta NFC</h3><p>Adhesiva (12×12 cm) o de sobremesa, con el logo y los colores de tu hotel. Es la misma para todo el hotel.</p></div>
@@ -167,7 +208,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap grid2">
     <div>
       <h2 class="sec-title">Qué ve el huésped</h2>
@@ -191,7 +232,7 @@
   </div>
 </section>
 
-<section id="precio">
+<section class="alt" id="precio">
   <div class="wrap grid2">
     <div>
       <h2 class="sec-title">Precio de lanzamiento</h2>
@@ -207,7 +248,7 @@
   </div>
 </section>
 
-<section class="alt" id="contacto">
+<section id="contacto">
   <div class="wrap grid2">
     <div>
       <h2 class="sec-title">Te lo enseñamos con tu hotel</h2>
