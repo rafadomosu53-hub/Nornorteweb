@@ -417,6 +417,7 @@
   .arranque ul{display:grid; grid-template-columns:1fr 1fr; gap:0 28px; list-style:none; padding:0; margin:0;}
   .arranque li{display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-top:1px solid #e2e2e5; font-size:0.94rem;}
   .arranque li svg{flex-shrink:0; margin-top:3px;}
+  .arranque li.destacado{grid-column:1/-1;}
   .arranque .quedas{margin:18px 0 0; font-size:0.94rem; color:var(--text);}
   @media (max-width:760px){.arranque{padding:28px 22px;} .arranque ul{grid-template-columns:1fr;}}
   .price-note{max-width:760px; margin:20px auto 0; text-align:center; font-size:0.85rem; color:var(--text-muted);}
@@ -762,6 +763,7 @@
       <h3>Por qué hay una puesta en marcha</h3>
       <p>El primer mes es el de más trabajo, y se nota desde la primera semana. Esto es lo que hacemos antes de empezar con el mantenimiento:</p>
       <ul>
+        <li class="destacado"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span><b>Comparativa con tu competencia directa.</b> Analizamos a los negocios que te ganan en el mapa: reseñas, fotos, categorías, publicaciones y cómo responden a sus clientes. Vemos en qué son mejores que tú, aplicamos lo que a ellos ya les funciona y te marcamos dónde puedes superarlos.</span></li>
         <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Análisis completo de 25 zonas para tu búsqueda principal y 2 más</li>
         <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google optimizada: categorías, servicios, descripción, atributos, horarios y festivos</li>
         <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas antiguas que siguen sin contestar</li>
