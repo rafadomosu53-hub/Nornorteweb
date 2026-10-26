@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nornorte · Posicionamiento en Google Maps y reseñas para negocios locales</title>
-<meta name="description" content="Desde Córdoba, cuidamos tu ficha de Google cada semana, medimos tu posición en 25 zonas de tu barrio y te damos una tarjeta NFC para pedir reseñas. 59 €/mes IVA incluido, sin permanencia. Sin promesas de posiciones.">
+<meta name="description" content="SEO local en Google Maps con exclusividad: trabajamos con un solo negocio de cada tipo en cada zona, en toda España. Cuidamos tu ficha cada semana, medimos tu posición en 25 zonas y te damos una tarjeta NFC para reseñas. Sin promesas de posiciones.">
 <link rel="canonical" href="https://www.nornorte.es/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nornorte · Que tus clientes te encuentren en Google Maps">
-<meta property="og:description" content="Ficha de Google cuidada cada semana, medición en 25 zonas y tarjeta NFC para reseñas reales. 59 €/mes, sin permanencia.">
+<meta property="og:title" content="Nornorte · Un solo negocio por zona y sector en Google Maps">
+<meta property="og:description" content="Si trabajamos contigo, no trabajamos con tu competencia. Ficha de Google cuidada cada semana, medición en 25 zonas y tarjeta NFC para reseñas reales.">
 <meta property="og:url" content="https://www.nornorte.es/">
 <meta property="og:image" content="https://www.nornorte.es/guia/compartir.jpg">
 <meta property="og:locale" content="es_ES">
@@ -22,14 +22,13 @@
   "email": "gerencia@nornorte.es",
   "logo": "https://www.nornorte.es/favicon-192x192.png",
   "image": "https://www.nornorte.es/guia/compartir.jpg",
-  "description": "Posicionamiento local en Google Maps, gestión de reseñas y tarjetas NFC para negocios locales.",
+  "description": "Posicionamiento local en Google Maps con exclusividad por zona y tipo de negocio, gestión de reseñas y tarjetas NFC para negocios locales de toda España.",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "Córdoba",
     "addressCountry": "ES"
   },
   "areaServed": [
-    { "@type": "AdministrativeArea", "name": "Provincia de Córdoba" },
     { "@type": "Country", "name": "España" }
   ],
   "priceRange": "59 €/mes",
@@ -225,6 +224,42 @@
     max-width:600px;
     margin:0 auto;
   }
+
+  /* ---------- EXCLUSIVIDAD ---------- */
+  .statement .sello{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid rgba(255,255,255,0.25); border-radius:999px;
+    padding:6px 16px; font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#e8c97a;
+  }
+  .statement .sello svg{flex-shrink:0;}
+  .exclusiva{background:var(--bg); padding-bottom:60px;}
+  .exclusiva-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:900px){.exclusiva-grid{grid-template-columns:1fr;}}
+  .exclusiva .service{padding:36px 32px;}
+  .exclusiva .service p{margin-bottom:0;}
+  .zonas{margin-top:28px; background:var(--bg-alt); border-radius:var(--radius); padding:28px 32px;}
+  .zonas h3{font-size:1.1rem; margin-bottom:14px;}
+  .zonas-fila{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-top:1px solid #e2e2e5; font-size:0.96rem;}
+  .zonas h3 + .zonas-fila{border-top:none;}
+  .zonas-fila span{color:var(--text-muted); text-align:right;}
+  @media (max-width:560px){.zonas{padding:24px 20px;} .zonas-fila{flex-direction:column; gap:2px;} .zonas-fila span{text-align:left;}}
+  .estado-zona{display:inline-flex; gap:8px; flex-wrap:wrap; margin-top:20px; justify-content:center;}
+  .estado-zona span{font-size:0.82rem; font-weight:600; padding:6px 14px; border-radius:999px;}
+  .estado-zona .libre{background:#e6f5ec; color:#1e8e4f;}
+  .estado-zona .ocupada{background:#f2f2f4; color:#6e6e73;}
+
+  /* ---------- PERDIDAS ---------- */
+  .perdidas{background:var(--bg-alt);}
+  .perdidas-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  @media (max-width:760px){.perdidas-grid{grid-template-columns:1fr;}}
+  .perdida{background:#fff; border-radius:var(--radius); padding:28px 30px; border-left:4px solid #e5484d;}
+  .perdida h3{font-size:1.15rem; margin-bottom:8px;}
+  .perdida p{color:var(--text-muted); font-size:0.97rem; margin:0;}
+  .perdida p b{color:var(--text);}
+  .calculo{margin-top:28px; background:#0d0d0f; color:#fff; border-radius:var(--radius); padding:34px 36px; display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+  .calculo h3{color:#fff; font-size:1.35rem; margin-bottom:6px;}
+  .calculo p{color:#a1a1a6; margin:0; max-width:560px;}
+  .calculo .pill{background:#fff; color:#0d0d0f; white-space:nowrap;}
 
   /* ---------- AUTOMATION ---------- */
   .automation{background:var(--bg-alt); padding-bottom:60px;}
@@ -448,19 +483,19 @@
       <a href="https://panel.nornorte.es/escaneo" class="nav-guide">Escaneo gratis</a>
       <a href="/guia/" class="nav-guide">Guía gratis</a>
       <a href="/hoteles/" class="nav-guide">Hoteles</a>
-      <a href="#contacto" class="pill pill-dark">Contáctanos</a>
+      <a href="#contacto" class="pill pill-dark">¿Mi zona está libre?</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow reveal">SEO local · Google Maps · Reseñas</p>
-    <h1 class="reveal reveal-1">Que tus clientes te encuentren en Google Maps.</h1>
-    <p class="lede reveal reveal-2">Cuidamos tu ficha de Google cada semana y ponemos una tarjeta NFC en tu mostrador para que tus clientes te dejen su opinión con un toque.</p>
+    <p class="eyebrow reveal">SEO local premium · Un solo negocio por zona y sector</p>
+    <h1 class="reveal reveal-1">Que te elijan a ti en Google Maps. No a tu competencia.</h1>
+    <p class="lede reveal reveal-2">Trabajamos con un solo negocio de cada tipo en cada zona. Cuidamos tu ficha de Google cada semana y te damos una tarjeta NFC para que tus clientes te dejen su opinión con un toque. Si trabajamos contigo, tu competencia ya no puede contratarnos.</p>
     <div class="cta-row reveal reveal-3">
-      <a href="#contacto" class="pill pill-accent">Contáctanos</a>
-      <a href="#servicios" class="pill pill-outline">Ver cómo funciona</a>
+      <a href="#contacto" class="pill pill-accent">Comprobar si mi zona está libre</a>
+      <a href="#exclusividad" class="pill pill-outline">Cómo funciona la exclusividad</a>
     </div>
   </div>
 
@@ -469,7 +504,7 @@
       <div class="results-mock">
         <div class="results-search">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#8e8e93" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="#8e8e93" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>panadería cerca de mí</span>
+          <span>clínica dental cerca de mí</span>
         </div>
         <div class="results-row top">
           <div class="results-rank">1</div>
@@ -500,9 +535,43 @@
 
 <section class="statement">
   <div class="wrap reveal">
-    <p class="eyebrow">El problema</p>
-    <h2>Tu cliente ya te está buscando. ¿Te encuentra a ti?</h2>
-    <p>Muchas fichas de Google están a medio rellenar, con pocas reseñas y sin actividad. Quien busca compara, y elige la que transmite confianza.</p>
+    <p class="sello"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7L12 2z" fill="#e8c97a"/></svg> Exclusividad por zona</p>
+      <h2>No ponemos a dos negocios iguales de la misma zona a competir por el mismo puesto. Por eso solo trabajamos con uno.</h2>
+      <p>Quien busca en Google Maps compara y elige al que transmite más confianza. Si nos eliges, tu competencia directa ya no puede contratarnos. Y si llega antes que tú, la plaza es suya.</p>
+  </div>
+</section>
+
+<section class="perdidas" id="dinero">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Lo que no se ve</p>
+      <h2>Tu negocio está perdiendo dinero cada mes. Y no lo ves.</h2>
+    </div>
+    <div class="perdidas-grid">
+      <div class="perdida reveal">
+        <h3>Una ficha de Google sin cuidar</h3>
+        <p>Horarios que no cuadran, fotos viejas, categorías que no son, sin novedades. Quien busca ve otra ficha mejor cuidada a 300 metros y <b>se va con ella sin llamarte</b>.</p>
+      </div>
+      <div class="perdida reveal reveal-1">
+        <h3>Pocas reseñas, o sin responder</h3>
+        <p>Tus clientes contentos se van sin dejar su opinión y las críticas se quedan sin respuesta. Entre dos negocios parecidos, <b>la gente elige al que tiene más y mejores reseñas</b>.</p>
+      </div>
+      <div class="perdida reveal reveal-1">
+        <h3>No sabes qué piensan tus clientes</h3>
+        <p>Sin medir qué se repite en sus opiniones, ni si vuelven, no sabes qué te hace perder clientes. <b>Lo que no se mide no se puede arreglar</b>.</p>
+      </div>
+      <div class="perdida reveal reveal-2">
+        <h3>No sabes qué hace tu competencia</h3>
+        <p>El cliente indeciso compara y se queda con quien sale antes y transmite más confianza. Si no sabes <b>por qué tu competencia te gana en el mapa</b>, se los sigue llevando.</p>
+      </div>
+    </div>
+    <div class="calculo reveal">
+      <div>
+        <h3>¿Cuánto dinero estás dejando de ganar? Te lo calculamos gratis.</h3>
+        <p>Con las búsquedas reales de tu zona, tu posición en Google Maps y lo que te deja un cliente, te enseñamos en euros lo que se lleva tu competencia cada mes. Es una estimación con datos, no una promesa, y lo ves tú mismo.</p>
+      </div>
+      <a href="#contacto" class="pill">Calcular lo que estoy perdiendo</a>
+    </div>
   </div>
 </section>
 
@@ -541,6 +610,39 @@
   </div>
 </section>
 
+<section class="exclusiva" id="exclusividad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Exclusividad</p>
+      <h2>Una plaza por zona y tipo de negocio</h2>
+    </div>
+    <div class="exclusiva-grid">
+      <div class="service reveal">
+        <h3>Un solo negocio de cada tipo</h3>
+        <p>Si trabajamos con una clínica dental de tu zona, no trabajamos con otra. Negocios distintos, como una clínica dental y una de fisioterapia, no se quitan la plaza.</p>
+      </div>
+      <div class="service reveal reveal-1">
+        <h3>Tu zona, según tu localidad</h3>
+        <p>En una localidad pequeña o mediana la plaza es todo el municipio. En una ciudad grande es el área alrededor de tu negocio, que es donde te buscan tus clientes.</p>
+      </div>
+      <div class="service reveal reveal-2">
+        <h3>Mientras estés con nosotros</h3>
+        <p>La plaza es tuya mientras sigas de alta. Si te das de baja, queda libre para el siguiente negocio de tu zona que la pida.</p>
+      </div>
+    </div>
+    <div class="zonas reveal">
+      <h3>Cómo se define tu zona</h3>
+      <div class="zonas-fila"><strong>Localidades de menos de 100.000 habitantes</strong><span>Todo el municipio</span></div>
+      <div class="zonas-fila"><strong>Ciudades de 100.000 a 500.000 habitantes</strong><span>2 km alrededor de tu negocio</span></div>
+      <div class="zonas-fila"><strong>Ciudades de más de 500.000 habitantes</strong><span>1 km alrededor de tu negocio</span></div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <div class="estado-zona"><span class="libre">● Zona libre: puedes empezar</span><span class="ocupada">● Zona ocupada: te apuntamos en la lista de espera</span></div>
+      <p style="margin-top:22px;"><a href="#contacto" class="pill pill-accent">Comprobar si mi zona está libre</a></p>
+    </div>
+  </div>
+</section>
+
 <section class="process">
   <div class="wrap">
     <div class="section-head reveal">
@@ -551,7 +653,7 @@
       <div class="step reveal">
         <div class="step-num">1</div>
         <h3>Diagnóstico</h3>
-        <p>Analizamos cómo apareces hoy en Google Maps frente a tu competencia.</p>
+        <p>Comprobamos que tu zona está libre y analizamos cómo apareces hoy en Google Maps frente a tu competencia.</p>
       </div>
       <div class="step reveal reveal-1">
         <div class="step-num">2</div>
@@ -623,16 +725,17 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Plan</p>
-      <h2>Precios claros, sin permanencia</h2>
+      <h2>Precio claro, plaza exclusiva</h2>
     </div>
     <div class="price-card price-wide reveal">
       <div class="price-main">
         <h3>SEO Maps + Tarjeta NFC</h3>
         <div class="price-tag">59€ <small>/ mes, IVA incluido</small></div>
-        <p class="desc">Precio cerrado y lo hacemos todo nosotros: cuidado semanal de tu ficha de Google + tarjeta NFC incluida. Tú no tienes que aprender ninguna herramienta. Sin permanencia: cancelas cuando quieras.</p>
+        <p class="desc">Precio cerrado, plaza exclusiva en tu zona y lo hacemos todo nosotros: cuidado semanal de tu ficha de Google + tarjeta NFC incluida. Tú no tienes que aprender ninguna herramienta. Sin permanencia: cancelas cuando quieras.</p>
       </div>
       <ul class="price-features">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Primer diagnóstico completo gratis</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Exclusividad en tu zona y tipo de negocio</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Diagnóstico gratis, con el cálculo de lo que estás perdiendo</strong></li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana en tu ficha</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición en 25 zonas, cada semana</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas nuevas, y a las antiguas sin contestar al empezar</li>
@@ -654,12 +757,14 @@
     </div>
     <div class="faq-list reveal reveal-1">
       <details><summary>¿Me garantizáis el primer puesto en Google Maps?</summary><p>No. Nadie puede garantizar una posición concreta: el orden lo decide Google. Lo que sí hacemos es trabajar tu ficha cada semana, medir tu posición en 25 zonas en las mismas condiciones y enseñarte los resultados con datos.</p></details>
-      <details><summary>¿Tengo que hacer algo yo?</summary><p>Casi nada. No es una aplicación que tengas que aprender a usar: el trabajo lo hacemos nosotros por un precio cerrado. Tú solo nos avisas de cambios (horarios, cierres, festivos), nos mandas alguna foto cuando quieras y pides la reseña con la tarjeta NFC.</p></details>
+      <details><summary>¿Qué significa la exclusividad?</summary><p>Que mientras trabajemos contigo no trabajamos con ningún otro negocio de tu mismo tipo en tu zona. Tu zona es todo el municipio si tiene menos de 100.000 habitantes, 2 km alrededor de tu negocio en ciudades de 100.000 a 500.000 habitantes y 1 km en las de más de 500.000. Si te das de baja, la plaza queda libre.</p></details>
+        <details><summary>¿Y si mi zona ya está ocupada?</summary><p>Te lo decimos antes de nada y, si quieres, te apuntamos en la lista de espera de tu zona. Si la plaza se libera, te avisamos el primero. No aceptamos a dos negocios que compiten por el mismo cliente.</p></details>
+        <details><summary>¿Tengo que hacer algo yo?</summary><p>Casi nada. No es una aplicación que tengas que aprender a usar: el trabajo lo hacemos nosotros por un precio cerrado. Tú solo nos avisas de cambios (horarios, cierres, festivos), nos mandas alguna foto cuando quieras y pides la reseña con la tarjeta NFC.</p></details>
       <details><summary>¿Necesito daros la contraseña de mi cuenta de Google?</summary><p>Nunca. Nos añades como gestores de tu Perfil de Empresa con el correo gerencia@nornorte.es. Tú sigues siendo el propietario y puedes quitarnos el acceso cuando quieras.</p></details>
       <details><summary>¿Quién responde a mis reseñas?</summary><p>Las de 4 y 5 estrellas se responden de forma automática, cada semana, con un texto escrito con inteligencia artificial y el tono de tu negocio. Las de 1 a 3 estrellas nunca se publican solas: una persona revisa cada respuesta antes de publicarla y, si quieres, te la enseñamos antes. Nunca ofrecemos descuentos ni regalos a cambio de reseñas: Google lo prohíbe.</p></details>
       <details><summary>¿Hay permanencia?</summary><p>No. Se paga cada mes y puedes darte de baja cuando quieras. El servicio sigue activo hasta el final del mes ya pagado.</p></details>
       <details><summary>¿Qué pasa con la tarjeta NFC si me doy de baja?</summary><p>Te la quedas. Sigue funcionando igual, porque lleva a tu propio enlace de reseñas de Google.</p></details>
-      <details><summary>¿Qué incluye el diagnóstico gratis?</summary><p>Un escaneo de 25 zonas alrededor de tu negocio, cómo estás frente a los negocios que salen por delante, una revisión de tu ficha y la primera tarea que haríamos. Te lo quedas aunque no contrates nada.</p></details>
+      <details><summary>¿Qué incluye el diagnóstico gratis?</summary><p>El cálculo de cuánto dinero estás dejando de ganar al mes por no salir entre los primeros, un escaneo de 25 zonas alrededor de tu negocio, cómo estás frente a los negocios que salen por delante, una revisión de tu ficha y la primera tarea que haríamos. Te lo quedas aunque no contrates nada.</p></details>
     </div>
   </div>
 </section>
@@ -667,18 +772,26 @@
 <section class="contact" id="contacto">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Empezar</p>
-      <h2>Cuéntanos sobre tu negocio</h2>
+      <p class="eyebrow">Plazas limitadas</p>
+      <h2>Comprueba si tu zona está libre</h2>
     </div>
     <form class="reveal reveal-1" action="https://formspree.io/f/xljdeond" method="POST">
-      <input type="hidden" name="_subject" value="Nuevo contacto desde la web — Nornorte">
+      <input type="hidden" name="_subject" value="¿Zona libre? Nuevo contacto desde la web — Nornorte">
       <div class="field">
         <label for="nombre">Nombre</label>
         <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
       </div>
       <div class="field">
         <label for="negocio">Nombre del negocio</label>
-        <input id="negocio" name="negocio" type="text" placeholder="Ej. Panadería El Horno" required>
+        <input id="negocio" name="negocio" type="text" placeholder="Ej. Clínica Dental Sonrisa" required>
+      </div>
+      <div class="field">
+        <label for="tipo">Tipo de negocio</label>
+        <input id="tipo" name="tipo_negocio" type="text" placeholder="Ej. clínica dental, taller, restaurante" required>
+      </div>
+      <div class="field">
+        <label for="localidad">Dirección y localidad del negocio</label>
+        <input id="localidad" name="localidad" type="text" placeholder="Ej. Calle Mayor 10, Valencia" required>
       </div>
       <div class="field">
         <label for="telefono">Teléfono o WhatsApp</label>
@@ -689,11 +802,11 @@
         <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com">
       </div>
       <div class="field">
-        <label for="mensaje">Cuéntanos brevemente qué necesitas</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Ej. quiero aparecer antes en Google Maps en mi ciudad"></textarea>
+        <label for="mensaje">¿Cuánto te deja de media un cliente nuevo? Y lo que quieras contarnos (opcional)</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Ej. quiero que me encuentren antes que a mi competencia en Google Maps"></textarea>
       </div>
-      <button type="submit" class="btn-submit">Contáctanos</button>
-      <p class="form-note">Estamos en Córdoba y trabajamos con negocios de la provincia y del resto de España. Te contestamos en 1 día laborable. También puedes escribirnos a <a href="mailto:gerencia@nornorte.es" style="color:var(--accent); font-weight:600;">gerencia@nornorte.es</a>.</p>
+      <button type="submit" class="btn-submit">Comprobar mi zona</button>
+      <p class="form-note">Trabajamos con negocios de toda España desde Córdoba. Te decimos en 1 día laborable si tu zona está libre y te preparamos el cálculo de lo que estás perdiendo, gratis. También puedes escribirnos a <a href="mailto:gerencia@nornorte.es" style="color:var(--accent); font-weight:600;">gerencia@nornorte.es</a>.</p>
       <p class="form-legal">Responsable: Nornorte. Usamos tus datos solo para responder a tu consulta. Puedes acceder a ellos, corregirlos o borrarlos escribiendo a gerencia@nornorte.es. Más información en el <a href="/privacidad/">aviso de privacidad</a>.</p>
     </form>
   </div>
@@ -701,7 +814,7 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <span>Nornorte · SEO local y tarjetas NFC para reseñas · Córdoba · <a href="mailto:gerencia@nornorte.es">gerencia@nornorte.es</a></span>
+    <span>Nornorte · SEO local con exclusividad por zona · Toda España, desde Córdoba · <a href="mailto:gerencia@nornorte.es">gerencia@nornorte.es</a></span>
     <span><a href="/guia/">Guía gratis</a> · <a href="/hoteles/">Nornorte Hoteles</a> · <a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/condiciones/">Condiciones</a></span>
   </div>
   <div class="wrap footer-note">Nornorte es un servicio independiente y no está afiliado, patrocinado ni respaldado por Google. Google y Google Maps son marcas de Google LLC. El ejemplo de búsqueda de esta página es ilustrativo.</div>
