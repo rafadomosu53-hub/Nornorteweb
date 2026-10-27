@@ -270,6 +270,41 @@
     text-transform:uppercase; letter-spacing:0.02em;
   }
 
+  /* ---------- PANEL DEL CLIENTE (capturas con datos de ejemplo) ---------- */
+  .panel-demo{padding-bottom:80px;}
+  .panel-demo .section-head p.sub{color:var(--text-muted); margin-top:14px;}
+  .panel-tabs{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:28px;}
+  .panel-tabs button{font:inherit; font-size:0.9rem; font-weight:600; color:var(--text); background:var(--bg-alt); border:1px solid var(--line); border-radius:999px; padding:9px 18px; cursor:pointer; transition:background .2s, color .2s;}
+  .panel-tabs button:hover{background:#ebebef;}
+  .panel-tabs button[aria-selected="true"]{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .panel-stage{position:relative; max-width:1040px; margin:0 auto;}
+  .navegador{border-radius:16px; overflow:hidden; background:#fff; border:1px solid var(--line); box-shadow:0 30px 70px rgba(13,13,15,0.14);}
+  .navegador-barra{display:flex; align-items:center; gap:7px; padding:11px 16px; background:#f0f0f3; border-bottom:1px solid var(--line);}
+  .navegador-barra i{width:11px; height:11px; border-radius:50%; background:#d4d4d9;}
+  .navegador-barra span{margin-left:14px; flex:1; max-width:340px; font-size:0.75rem; color:var(--text-muted); background:#fff; border-radius:8px; padding:4px 12px;}
+  .navegador img{display:block; width:100%; height:auto; aspect-ratio:16/10;}
+  .sello-ejemplo{position:absolute; top:52px; right:-10px; z-index:2; background:#fff4d6; color:#7a5300; font-size:0.72rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; padding:6px 12px; border-radius:999px; box-shadow:0 6px 16px rgba(13,13,15,0.12);}
+  .panel-pie{text-align:center; max-width:640px; margin:26px auto 0; color:var(--text-muted); min-height:3.2em;}
+  .panel-pie strong{color:var(--ink);}
+  .panel-movil{margin-top:72px; text-align:center;}
+  .panel-movil h3{font-size:1.4rem; margin-bottom:8px;}
+  .panel-movil > p{color:var(--text-muted); margin-bottom:32px;}
+  .moviles{display:flex; gap:28px; justify-content:center;}
+  .moviles figure{margin:0;}
+  .moviles img{display:block; width:220px; height:auto; aspect-ratio:520/1125; border-radius:30px; border:8px solid var(--ink); box-shadow:0 24px 50px rgba(13,13,15,0.18); background:#fff;}
+  .moviles figcaption{font-size:0.85rem; color:var(--text-muted); margin-top:12px;}
+  .panel-nota{text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:40px;}
+  @media (max-width:760px){
+    .panel-tabs{flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; padding-bottom:6px; margin:0 -20px 22px; padding-left:20px; padding-right:20px; scrollbar-width:none;}
+    .panel-tabs button{flex:0 0 auto;}
+    .sello-ejemplo{top:46px; right:8px;}
+    .navegador{border-radius:12px;}
+    .navegador-barra span{display:none;}
+    .moviles{overflow-x:auto; justify-content:flex-start; margin:0 -20px; padding:0 20px 24px; scroll-snap-type:x mandatory;}
+    .moviles figure{scroll-snap-align:center; flex:0 0 auto;}
+    .moviles img{width:200px;}
+  }
+
   /* ---------- SERVICES ---------- */
   .services{padding-bottom:60px;}
   .section-head{text-align:center; max-width:600px; margin:0 auto 64px;}
@@ -677,9 +712,48 @@
       <div class="step reveal reveal-2">
         <div class="step-num">4</div>
         <h3>Seguimiento</h3>
-        <p>Cada semana medimos y cuidamos tu ficha. En tu panel ves qué hemos hecho y cómo cambia tu posición.</p>
+        <p>Cada semana medimos y cuidamos tu ficha. En <a href="#panel">tu panel</a> ves qué hemos hecho y cómo cambia tu posición.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="panel-demo" id="panel">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Tu panel</p>
+      <h2>Lo que verás cada semana</h2>
+      <p class="sub">Cada negocio tiene su propio panel privado, con un enlace solo para él. Se actualiza solo cada lunes y lo abres desde el ordenador o el móvil, sin instalar nada.</p>
+    </div>
+    <div class="panel-tabs reveal" role="tablist" aria-label="Pantallas del panel">
+      <button type="button" role="tab" aria-selected="true" data-img="inicio" data-txt="&lt;strong&gt;Inicio.&lt;/strong&gt; Tu puntuación, en cuántas zonas sales entre los 3 primeros, tus reseñas nuevas y lo que hemos hecho este mes, de un vistazo.">Inicio</button>
+      <button type="button" role="tab" aria-selected="false" data-img="mapa" data-txt="&lt;strong&gt;Tu mapa.&lt;/strong&gt; Tu posición en Google Maps desde 25 puntos de tu zona: cómo empezaste y cómo estás ahora, zona por zona.">Tu mapa</button>
+      <button type="button" role="tab" aria-selected="false" data-img="resenas" data-txt="&lt;strong&gt;Reseñas.&lt;/strong&gt; Cuántas llegan cada mes frente a tu competencia, qué elogian y de qué se quejan tus clientes, y cuántas están sin responder.">Reseñas</button>
+      <button type="button" role="tab" aria-selected="false" data-img="competencia" data-txt="&lt;strong&gt;Competencia.&lt;/strong&gt; Tu puesto entre todos los negocios que salen en tus búsquedas y si ChatGPT y Google te recomiendan cuando alguien pregunta.">Competencia</button>
+      <button type="button" role="tab" aria-selected="false" data-img="ficha" data-txt="&lt;strong&gt;Tu ficha de Google.&lt;/strong&gt; La revisamos cada semana punto por punto: categorías, descripción, horario, fotos y publicaciones.">Tu ficha de Google</button>
+      <button type="button" role="tab" aria-selected="false" data-img="informe" data-txt="&lt;strong&gt;Informe mensual en PDF.&lt;/strong&gt; Cada fin de mes, tus resultados en un documento listo para descargar, guardar o enseñar a tu socio.">Informe PDF</button>
+    </div>
+    <div class="panel-stage reveal">
+      <span class="sello-ejemplo">Datos de ejemplo</span>
+      <div class="navegador">
+        <div class="navegador-barra" aria-hidden="true"><i></i><i></i><i></i><span>panel.nornorte.es</span></div>
+        <a id="panel-enlace" href="/panel/inicio.webp" target="_blank" rel="noopener" title="Ver la captura en grande">
+          <img id="panel-img" src="/panel/inicio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Panel del cliente de Nornorte con datos de ejemplo de un negocio inventado">
+        </a>
+      </div>
+    </div>
+    <p class="panel-pie" id="panel-pie" aria-live="polite"><strong>Inicio.</strong> Tu puntuación, en cuántas zonas sales entre los 3 primeros, tus reseñas nuevas y lo que hemos hecho este mes, de un vistazo.</p>
+
+    <div class="panel-movil">
+      <h3 class="reveal">Y en el móvil, igual de claro</h3>
+      <p class="reveal">Míralo entre cliente y cliente: lo importante cabe en la pantalla del teléfono.</p>
+      <div class="moviles reveal">
+        <figure><img src="/panel/movil-inicio.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Inicio del panel en el móvil, con datos de ejemplo"><figcaption>Inicio</figcaption></figure>
+        <figure><img src="/panel/movil-mapa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Mapa de posiciones en Google Maps en el móvil, con datos de ejemplo"><figcaption>Tu mapa</figcaption></figure>
+        <figure><img src="/panel/movil-resenas.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Reseñas en el móvil, con datos de ejemplo"><figcaption>Reseñas</figcaption></figure>
+      </div>
+    </div>
+    <p class="panel-nota">Capturas reales del panel con datos de ejemplo: el negocio, sus competidores y sus cifras son inventados. Los resultados de cada negocio son distintos y nadie puede garantizar posiciones en Google.</p>
   </div>
 </section>
 
@@ -862,6 +936,19 @@
   }
   onScrollNav();
   window.addEventListener('scroll', onScrollNav, {passive:true});
+
+  // Pestañas del panel de ejemplo: cambian la captura y el texto de debajo.
+  var tabs = document.querySelectorAll('.panel-tabs button');
+  var pImg = document.getElementById('panel-img'), pEnl = document.getElementById('panel-enlace'), pPie = document.getElementById('panel-pie');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(o){ o.setAttribute('aria-selected', o === t ? 'true' : 'false'); });
+      var src = '/panel/' + t.getAttribute('data-img') + '.webp';
+      pImg.src = src; pEnl.href = src;
+      pImg.alt = t.textContent + ' del panel del cliente de Nornorte, con datos de ejemplo de un negocio inventado';
+      pPie.innerHTML = t.getAttribute('data-txt');
+    });
+  });
 
   if(reduceMotion){ return; }
 
