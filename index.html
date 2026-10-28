@@ -53,6 +53,9 @@
     --text-muted:#6e6e73;
     --accent:#2f6feb;
     --accent-soft:#eaf1fd;
+    --brand:#253746;
+    --brand-soft:#e8ecf0;
+    --brand-deep:#1b2833;
     --line:#e6e6e9;
     --radius:22px;
     --sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
@@ -79,7 +82,7 @@
 
   .eyebrow{
     font-size:0.95rem;
-    color:var(--accent);
+    color:var(--brand);
     font-weight:600;
     letter-spacing:0.02em;
     text-transform:uppercase;
@@ -107,7 +110,7 @@
     max-width:1120px; margin:0 auto;
   }
   .wordmark{font-size:2.2rem; font-weight:700; color:var(--ink); letter-spacing:-0.01em;}
-  .wordmark span{color:#0b1d33;}
+  .wordmark span{color:var(--brand);}
   .pill{
     display:inline-block;
     font-weight:600;
@@ -145,7 +148,7 @@
 
   /* Hero visual panel */
   .hero-visual{
-    background:linear-gradient(180deg, var(--accent-soft) 0%, #f7fafe 100%);
+    background:linear-gradient(180deg, var(--brand-soft) 0%, #f6f8fa 100%);
     border-radius:32px;
     padding:0;
     overflow:hidden;
@@ -174,11 +177,11 @@
     padding:16px 20px;
     margin-bottom:10px;
   }
-  .results-row.top{box-shadow:0 12px 28px -10px rgba(47,111,235,0.28); border:1.5px solid var(--accent);}
+  .results-row.top{box-shadow:0 12px 28px -10px rgba(37,55,70,0.28); border:1.5px solid var(--brand);}
   .results-row:not(.top){opacity:0.7;}
   .results-rank{
     width:28px; height:28px; border-radius:50%;
-    background:var(--accent); color:#fff;
+    background:var(--brand); color:#fff;
     font-weight:700; font-size:0.85rem;
     display:flex; align-items:center; justify-content:center;
     flex-shrink:0;
@@ -192,7 +195,7 @@
   .results-stars.muted{color:#c7c7cc;}
   .results-tag{
     font-size:0.72rem; font-weight:700; color:#fff;
-    background:var(--accent);
+    background:var(--brand);
     padding:5px 12px; border-radius:999px;
     white-space:nowrap;
   }
@@ -264,7 +267,7 @@
   .automation-badge{
     display:inline-block;
     font-size:0.7rem; font-weight:700; color:#fff;
-    background:var(--accent);
+    background:var(--brand);
     padding:4px 12px; border-radius:999px;
     margin-bottom:14px;
     text-transform:uppercase; letter-spacing:0.02em;
@@ -353,8 +356,8 @@
   .step-num{
     font-size:0.85rem;
     font-weight:700;
-    color:var(--accent);
-    background:var(--accent-soft);
+    color:var(--brand);
+    background:var(--brand-soft);
     width:32px; height:32px;
     border-radius:50%;
     display:flex; align-items:center; justify-content:center;
@@ -373,7 +376,7 @@
   }
   .price-wide{
     width:100%;
-    border:2px solid var(--accent);
+    border:2px solid var(--brand);
     display:grid;
     grid-template-columns:minmax(260px,1fr) 2fr;
     gap:56px;
@@ -510,11 +513,11 @@
   @media (max-width:640px){.nav-guide{display:none;}}
   .guide{padding:0 0 120px;}
   @media (max-width:760px){.guide{padding:0 0 80px;}}
-  .guide-card{display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center; background:var(--navy,#0b1d33); color:#fff; border-radius:var(--radius); padding:48px 56px;}
+  .guide-card{display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center; background:var(--brand-deep); color:#fff; border-radius:var(--radius); padding:48px 56px;}
   .guide-card img{width:170px; border-radius:10px; box-shadow:0 18px 40px rgba(0,0,0,.35); transform:rotate(-3deg);}
-  .guide-card .eyebrow{color:#7fa8ff;}
+  .guide-card .eyebrow{color:#a9bccd;}
   .guide-card h2{color:#fff; font-size:clamp(1.8rem,3.4vw,2.6rem); margin:10px 0 14px;}
-  .guide-card p{color:#c9d6ea; font-size:1.08rem; max-width:560px; margin-bottom:24px;}
+  .guide-card p{color:#d3dce4; font-size:1.08rem; max-width:560px; margin-bottom:24px;}
   @media (max-width:760px){.guide-card{grid-template-columns:1fr; padding:32px 24px; gap:28px; text-align:left;} .guide-card img{width:130px;}}
 </style>
 </head>
@@ -628,26 +631,26 @@
     <div class="service-grid">
       <div class="service reveal">
         <div class="service-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="#2f6feb" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" stroke="#2f6feb" stroke-width="1.7"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="#253746" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" stroke="#253746" stroke-width="1.7"/></svg>
         </div>
         <h3>Posicionamiento en Google Maps</h3>
         <p>Revisamos y mantenemos tu ficha cada semana y medimos tu posición en 25 zonas de tu barrio. No prometemos puestos: te enseñamos con datos qué hacemos y cómo evoluciona.</p>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google completa y revisada</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Informe mensual de tu posición y tus reseñas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google completa y revisada</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Informe mensual de tu posición y tus reseñas</li>
         </ul>
       </div>
       <div class="service reveal reveal-1">
         <div class="service-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#2f6feb" stroke-width="1.7"/><path d="M9 7h6M9 11h6" stroke="#2f6feb" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="1.4" fill="#2f6feb"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#253746" stroke-width="1.7"/><path d="M9 7h6M9 11h6" stroke="#253746" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="1.4" fill="#2f6feb"/></svg>
         </div>
         <h3>Tarjetas NFC para reseñas</h3>
         <p>Tu cliente acerca el móvil a la tarjeta y se le abre directamente la página para dejarte su opinión en Google. Sin buscar nada.</p>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta física con chip NFC</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Un toque, sin apps ni buscar tu negocio</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Más fácil pedir reseñas reales, a todos por igual</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta física con chip NFC</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Un toque, sin apps ni buscar tu negocio</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Más fácil pedir reseñas reales, a todos por igual</li>
         </ul>
       </div>
     </div>
@@ -767,11 +770,11 @@
       <h3>Respuestas automáticas a las de 4 y 5 estrellas</h3>
       <p>Respondemos cada reseña nueva con el tono de tu negocio. Las de 4 y 5 estrellas se responden de forma automática cada semana. Las de 1 a 3 estrellas las revisa una persona antes de publicarlas.</p>
       <ul>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Todas las reseñas nuevas, buenas y malas</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Al empezar, también las antiguas que se quedaron sin respuesta</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> En el idioma de cada reseña, también si te escriben turistas</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Revisión humana de las reseñas de 1 a 3 estrellas</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tono adaptado a la voz de tu negocio</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Todas las reseñas nuevas, buenas y malas</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Al empezar, también las antiguas que se quedaron sin respuesta</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> En el idioma de cada reseña, también si te escriben turistas</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Revisión humana de las reseñas de 1 a 3 estrellas</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Tono adaptado a la voz de tu negocio</li>
       </ul>
     </div>
   </div>
@@ -779,11 +782,11 @@
 
 <section class="guide" id="escaneo">
   <div class="wrap">
-    <div class="guide-card reveal" style="grid-template-columns:1fr; background:var(--accent,#2f6feb);">
+    <div class="guide-card reveal" style="grid-template-columns:1fr; background:var(--brand);">
       <div>
-        <p class="eyebrow" style="color:#dce8ff;">Escaneo gratis · 9 zonas</p>
+        <p class="eyebrow" style="color:#d5dde5;">Escaneo gratis · 9 zonas</p>
         <h2>¿Te encuentran en Google Maps cuando te buscan cerca?</h2>
-        <p style="color:#eaf1fd;">Buscamos lo que buscaría tu cliente desde 9 puntos alrededor de tu negocio y te enseñamos en qué posición sales en cada uno y quién aparece por delante. Gratis y en un minuto.</p>
+        <p style="color:#e8ecf0;">Buscamos lo que buscaría tu cliente desde 9 puntos alrededor de tu negocio y te enseñamos en qué posición sales en cada uno y quién aparece por delante. Gratis y en un minuto.</p>
         <a href="https://panel.nornorte.es/escaneo" class="pill" style="background:#fff; color:#0d0d0f;">Hacer mi escaneo gratis</a>
       </div>
     </div>
@@ -820,30 +823,30 @@
         <p class="desc">Plaza exclusiva en tu zona y lo hacemos todo nosotros. Si entras entre los 10 primeros, mantienes este precio mientras sigas con nosotros. Sin permanencia: te das de baja cuando quieras.</p>
       </div>
       <ul class="price-features">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Exclusividad en tu zona y tipo de negocio</strong></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Análisis de oportunidad gratis: lo que estás perdiendo, en euros</strong></li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana en tu ficha</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición en 25 zonas, cada semana</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas nuevas, y a las antiguas sin contestar al empezar</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Historial de reseñas: nota media y reseñas sin responder</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Comparación con tu competencia, cada semana</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> 1 tarjeta NFC incluida</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Llamada mensual para revisar resultados</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Cambios por correo: respondemos en 1 día laborable</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu propio panel e informe mensual</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Exclusividad en tu zona y tipo de negocio</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Análisis de oportunidad gratis: lo que estás perdiendo, en euros</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana en tu ficha</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Escaneo de tu posición en 25 zonas, cada semana</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas nuevas, y a las antiguas sin contestar al empezar</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Historial de reseñas: nota media y reseñas sin responder</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Comparación con tu competencia, cada semana</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> 1 tarjeta NFC incluida</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Llamada mensual para revisar resultados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Cambios por correo: respondemos en 1 día laborable</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Tu propio panel e informe mensual</li>
       </ul>
     </div>
     <div class="arranque reveal">
       <h3>Por qué hay una puesta en marcha</h3>
       <p>El primer mes es el de más trabajo, y se nota desde la primera semana. Esto es lo que hacemos antes de empezar con el mantenimiento:</p>
       <ul>
-        <li class="destacado"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> <span><b>Comparativa con tu competencia directa.</b> Analizamos a los negocios que te ganan en el mapa: reseñas, fotos, categorías, publicaciones y cómo responden a sus clientes. Vemos en qué son mejores que tú, aplicamos lo que a ellos ya les funciona y te marcamos dónde puedes superarlos.</span></li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Análisis completo de 25 zonas para tu búsqueda principal y 2 más</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google optimizada: categorías, servicios, descripción, atributos, horarios y festivos</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas antiguas que siguen sin contestar</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Alta y revisión en Apple Maps, Bing y los directorios que importan</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu tarjeta NFC diseñada, programada y entregada</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2f6feb" stroke-width="2.2" stroke-linecap="round"/></svg> Tu panel configurado y primera llamada con el plan de acción</li>
+        <li class="destacado"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> <span><b>Comparativa con tu competencia directa.</b> Analizamos a los negocios que te ganan en el mapa: reseñas, fotos, categorías, publicaciones y cómo responden a sus clientes. Vemos en qué son mejores que tú, aplicamos lo que a ellos ya les funciona y te marcamos dónde puedes superarlos.</span></li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Análisis completo de 25 zonas para tu búsqueda principal y 2 más</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google optimizada: categorías, servicios, descripción, atributos, horarios y festivos</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Respuesta a todas tus reseñas antiguas que siguen sin contestar</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Alta y revisión en Apple Maps, Bing y los directorios que importan</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Tu tarjeta NFC diseñada, programada y entregada</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#253746" stroke-width="2.2" stroke-linecap="round"/></svg> Tu panel configurado y primera llamada con el plan de acción</li>
       </ul>
       <p class="quedas"><b>Todo se queda en tu ficha aunque un día te vayas.</b> Desde el segundo mes pagas solo el mantenimiento: 75 € + IVA al mes. ¿Tienes un hotel o alojamiento? Mira <a href="/hoteles/" style="color:var(--accent); font-weight:600;">Nornorte Hoteles</a>, que incluye todo esto y una mini web para tus huéspedes.</p>
     </div>
