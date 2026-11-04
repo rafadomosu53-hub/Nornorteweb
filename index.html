@@ -490,7 +490,24 @@
   @media (max-width:760px){.arranque{padding:28px 22px;} .arranque ul{grid-template-columns:1fr;}}
   .price-note{max-width:760px; margin:20px auto 0; text-align:center; font-size:0.85rem; color:var(--text-muted);}
   .price-note a{color:inherit;}
-  .faq-list{max-width:760px; margin:0 auto; display:grid; gap:12px;}
+  .faq-list{display:grid; gap:10px;}
+  .faq-tab{position:fixed; right:0; top:50%; transform:translateY(-50%); z-index:60; display:flex; flex-direction:column; align-items:center; gap:8px; background:var(--brand); color:#fff; border:0; border-radius:14px 0 0 14px; padding:14px 10px; cursor:pointer; font:inherit; font-weight:600; font-size:0.85rem; box-shadow:0 10px 30px rgba(18,59,138,.25); transition:padding .2s ease;}
+  .faq-tab:hover{padding-right:14px;}
+  .faq-tab-icono{width:24px; height:24px; border-radius:50%; background:#C7D8EF; color:var(--brand); display:inline-flex; align-items:center; justify-content:center; font-weight:700;}
+  .faq-tab-texto{writing-mode:vertical-rl; transform:rotate(180deg); letter-spacing:0.04em;}
+  @media (max-width:640px){
+    .faq-tab{top:auto; bottom:18px; right:16px; transform:none; border-radius:999px; padding:10px 16px 10px 10px; flex-direction:row;}
+    .faq-tab:hover{padding-right:16px;}
+    .faq-tab-texto{writing-mode:horizontal-tb; transform:none;}
+  }
+  .faq-fondo{position:fixed; inset:0; background:rgba(13,13,15,.35); z-index:70; opacity:0; transition:opacity .25s ease;}
+  .faq-fondo.visible{opacity:1;}
+  .faq-panel{position:fixed; top:0; right:0; height:100%; width:min(460px,100%); background:var(--bg); z-index:80; overflow-y:auto; padding:28px 24px 40px; box-shadow:-20px 0 60px rgba(0,0,0,.15); transform:translateX(100%); visibility:hidden; transition:transform .3s ease, visibility 0s linear .3s;}
+  .faq-panel.abierto{transform:none; visibility:visible; transition:transform .3s ease;}
+  .faq-panel-cabecera{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:20px;}
+  .faq-panel h2{font-size:1.6rem; margin-top:8px;}
+  .faq-cerrar{flex-shrink:0; width:40px; height:40px; border-radius:50%; border:0; background:var(--bg-alt); color:var(--ink); font-size:1.5rem; line-height:1; cursor:pointer;}
+  @media (prefers-reduced-motion: reduce){.faq-panel,.faq-fondo{transition:none;}}
   .faq-list details{background:var(--bg-alt); border-radius:16px; padding:18px 22px;}
   .faq-list summary{font-weight:600; cursor:pointer; color:var(--ink);}
   .faq-list details p{margin-top:10px; color:var(--text-muted);}
@@ -887,13 +904,17 @@
   </div>
 </section>
 
-<section class="faq" id="preguntas">
-  <div class="wrap">
-    <div class="section-head reveal">
+<button type="button" class="faq-tab" id="faq-abrir" aria-controls="preguntas" aria-expanded="false"><span class="faq-tab-icono" aria-hidden="true">?</span><span class="faq-tab-texto">Preguntas</span></button>
+<div class="faq-fondo" id="faq-fondo" hidden></div>
+<aside class="faq-panel" id="preguntas" role="dialog" aria-modal="true" aria-labelledby="faq-titulo" aria-hidden="true">
+  <div class="faq-panel-cabecera">
+    <div>
       <p class="eyebrow">Preguntas frecuentes</p>
-      <h2>Lo que nos suelen preguntar</h2>
+      <h2 id="faq-titulo">Lo que nos suelen preguntar</h2>
     </div>
-    <div class="faq-list reveal reveal-1">
+    <button type="button" class="faq-cerrar" id="faq-cerrar" aria-label="Cerrar preguntas">&times;</button>
+  </div>
+  <div class="faq-list">
       <details><summary>¿Me garantizáis el primer puesto en Google Maps?</summary><p>No. Nadie puede garantizar una posición concreta: el orden lo decide Google. Lo que sí hacemos es trabajar tu ficha cada semana, medir tu posición en 25 zonas en las mismas condiciones y enseñarte los resultados con datos.</p></details>
       <details><summary>¿Qué significa la exclusividad?</summary><p>Que mientras trabajemos contigo no trabajamos con ningún otro negocio de tu mismo tipo en tu zona. Tu zona es todo el municipio si tiene menos de 100.000 habitantes, 2 km alrededor de tu negocio en ciudades de 100.000 a 500.000 habitantes y 1 km en las de más de 500.000. Si te das de baja, la plaza queda libre.</p></details>
         <details><summary>¿Y si mi zona ya está ocupada?</summary><p>Te lo decimos antes de nada y, si quieres, te apuntamos en la lista de espera de tu zona. Si la plaza se libera, te avisamos el primero. No aceptamos a dos negocios que compiten por el mismo cliente.</p></details>
@@ -904,9 +925,8 @@
         <details><summary>¿Por qué pago una puesta en marcha?</summary><p>Porque el primer mes es el de más trabajo: optimizamos tu ficha entera, respondemos todas tus reseñas antiguas, te damos de alta en otros mapas y directorios, programamos tu tarjeta NFC y configuramos tu panel. Es un pago único y todo ese trabajo se queda en tu ficha aunque te vayas.</p></details>
       <details><summary>¿Qué pasa con la tarjeta NFC si me doy de baja?</summary><p>Te la quedas. Sigue funcionando igual, porque lleva a tu propio enlace de reseñas de Google.</p></details>
       <details><summary>¿Qué incluye el análisis de oportunidad gratis?</summary><p>El cálculo de cuánto dinero estás dejando de ganar al mes por no salir entre los primeros, un escaneo de 25 zonas alrededor de tu negocio, cómo estás frente a los negocios que salen por delante, una revisión de tu ficha y la primera tarea que haríamos. Te lo quedas aunque no contrates nada.</p></details>
-    </div>
   </div>
-</section>
+</aside>
 
 <section class="contact" id="contacto">
   <div class="wrap">
@@ -1019,6 +1039,32 @@
     }, {passive:true});
   }
 })();
+
+  // Panel lateral de preguntas
+  (function(){
+    var panel=document.getElementById('preguntas'), fondo=document.getElementById('faq-fondo'),
+        abrir=document.getElementById('faq-abrir'), cerrar=document.getElementById('faq-cerrar');
+    if(!panel) return;
+    function abrirPanel(){
+      fondo.hidden=false; requestAnimationFrame(function(){ fondo.classList.add('visible'); });
+      panel.classList.add('abierto'); panel.setAttribute('aria-hidden','false');
+      abrir.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden';
+      cerrar.focus();
+    }
+    function cerrarPanel(){
+      fondo.classList.remove('visible'); setTimeout(function(){ fondo.hidden=true; },250);
+      panel.classList.remove('abierto'); panel.setAttribute('aria-hidden','true');
+      abrir.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+      if(location.hash==='#preguntas'){ history.replaceState(null,'',location.pathname+location.search); }
+      abrir.focus();
+    }
+    abrir.addEventListener('click',abrirPanel);
+    cerrar.addEventListener('click',cerrarPanel);
+    fondo.addEventListener('click',cerrarPanel);
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape' && panel.classList.contains('abierto')) cerrarPanel(); });
+    document.querySelectorAll('a[href="#preguntas"]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); abrirPanel(); }); });
+    if(location.hash==='#preguntas') abrirPanel();
+  })();
 </script>
 </body>
 </html>
