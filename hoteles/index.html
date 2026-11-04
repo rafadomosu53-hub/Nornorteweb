@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nornorte Hoteles: todo el servicio de Google Maps y una mini web para tus huéspedes</title>
-<meta name="description" content="Todo el servicio de Nornorte para la ficha de Google de tu alojamiento (publicaciones, reseñas, competencia, escaneo de 25 zonas, informe y llamada mensual) y, además, una mini web con tarjetas NFC para tus huéspedes. Para alojamientos de toda España.">
+<title>Nornorte Hoteles: Google Maps y mini web para hoteles, casas rurales y apartamentos turísticos</title>
+<meta name="description" content="Todo el servicio de Nornorte para la ficha de Google de tu alojamiento (publicaciones, reseñas, competencia, escaneo de 25 zonas, informe y llamada mensual) y, además, una mini web con tarjetas NFC para tus huéspedes. Para hoteles, casas rurales, apartamentos turísticos, pisos de Airbnb y hostales de toda España.">
 <link rel="canonical" href="https://www.nornorte.es/hoteles/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nornorte Hoteles: todo el servicio de Google Maps y una mini web para tus huéspedes">
@@ -167,6 +167,24 @@
     .inc-col.p3d:nth-child(n),.step.p3d:nth-child(n){--ry:0deg; --rx:30deg; transform-origin:50% 100%;}
   }
   @media (prefers-reduced-motion: reduce){.p3d{transform:none !important; filter:none !important; opacity:1 !important;}}
+  .tipos{list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin:-8px 0 28px; max-width:560px;}
+  .tipos li{display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--line); color:var(--brand); border-radius:999px; padding:7px 14px 7px 10px; font-size:0.92rem; font-weight:600;}
+  .tipos svg{width:18px; height:18px;}
+  .sec-title + .incluye, .sec-title + .steps{margin-top:28px;}
+  .ve-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;}
+  @media (max-width:800px){.ve-grid{grid-template-columns:repeat(2,1fr); gap:12px;}}
+  .ve{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px; display:flex; flex-direction:column; gap:4px;}
+  .ve-icono{width:46px; height:46px; border-radius:14px; background:var(--brand-soft); color:var(--brand); display:flex; align-items:center; justify-content:center; margin-bottom:10px;}
+  .ve b{color:var(--ink); font-size:1.05rem;}
+  .ve small{color:var(--text-muted); font-size:0.9rem;}
+  .ve.p3d:nth-child(3n+1){--ry:16deg; transform-origin:100% 100%;}
+  .ve.p3d:nth-child(3n){--ry:-16deg; transform-origin:0% 100%;}
+  @media (max-width:800px){.ve.p3d:nth-child(n){--ry:0deg; --rx:28deg; transform-origin:50% 100%;}}
+  .donde{margin-top:40px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+  .donde h3{font-size:1.15rem;}
+  .precio-claves{list-style:none; display:grid; gap:12px; margin-top:20px;}
+  .precio-claves li{display:flex; align-items:center; gap:10px; font-weight:600; color:var(--ink); font-size:1.05rem;}
+  .field select{width:100%; font:inherit; font-size:1rem; padding:12px 14px; border:1px solid #d6d6db; border-radius:12px; background:#fff; color:var(--text);}
 </style>
 </head>
 <body>
@@ -181,11 +199,18 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Nornorte Hoteles · Google Maps + mini web</p>
+      <p class="eyebrow">Nornorte Hoteles</p>
       <h1>Todo Nornorte para tu alojamiento. Y además, tu mini web para huéspedes.</h1>
-      <p class="lede">Cuidamos la ficha de Google de tu hotel o casa rural cada semana, con el mismo servicio completo que el resto de negocios Nornorte. Además, te damos una mini web con tarjetas NFC: el huésped acerca el móvil y ve el wifi, los horarios, los servicios y dónde dejar su opinión.</p>
+      <p class="lede">El servicio completo de Google Maps de Nornorte, más una mini web con tarjeta NFC para tus huéspedes.</p>
+      <ul class="tipos" aria-label="Para qué alojamientos es">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M3 21h18M8 8h3M8 12h3M8 16h3"/></svg>Hoteles</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v11h14V10M10 21v-6h4v6"/></svg>Casas rurales</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg>Apartamentos turísticos</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l2 2M15 8l2 2"/></svg>Airbnb y pisos turísticos</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V8M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></svg>Hostales y albergues</li>
+      </ul>
       <div class="cta-row">
-        <a href="#contacto" class="pill pill-accent">Quiero verlo en mi hotel</a>
+        <a href="#contacto" class="pill pill-accent">Quiero verlo en mi alojamiento</a>
         <a href="#incluye" class="pill pill-line">Qué incluye</a>
       </div>
     </div>
@@ -199,7 +224,6 @@
 <section id="incluye">
   <div class="wrap">
     <h2 class="sec-title">No es solo una tarjeta: es todo Nornorte, más la mini web</h2>
-    <p class="sec-lede">Nornorte Hoteles incluye exactamente el mismo servicio de Google Maps que damos a cualquier negocio. Lo que se suma es la mini web con sus tarjetas, y por eso cuesta un poco más.</p>
     <div class="incluye">
       <div class="inc-col p3d">
         <p class="inc-tag">El servicio Nornorte completo</p>
@@ -229,35 +253,30 @@
 <section class="alt">
   <div class="wrap">
     <h2 class="sec-title">Así funciona la mini web</h2>
-    <p class="sec-lede">Sin apps, sin códigos y sin que el huésped tenga que descargar nada.</p>
     <div class="steps">
-      <div class="step p3d"><h3>Diseñamos tu tarjeta NFC</h3><p>Adhesiva (12×12 cm) o de sobremesa, con el logo y los colores de tu hotel. Es la misma para todo el hotel.</p></div>
-      <div class="step p3d"><h3>Creamos tu mini web</h3><p>Con todo lo que el huésped suele preguntar, en español e inglés. La dejamos lista y la programamos en cada tarjeta.</p></div>
-      <div class="step p3d"><h3>El huésped acerca el móvil</h3><p>Se abre la información al momento. Si cambia un horario, lo actualizamos nosotros y la tarjeta sigue igual.</p></div>
+      <div class="step p3d"><h3>Diseñamos tu tarjeta NFC</h3><p>Adhesiva o de sobremesa, con tu logo y tus colores.</p></div>
+      <div class="step p3d"><h3>Creamos tu mini web</h3><p>Todo lo que el huésped pregunta, en español e inglés.</p></div>
+      <div class="step p3d"><h3>El huésped acerca el móvil</h3><p>Se abre al momento, sin apps ni códigos.</p></div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap grid2">
-    <div>
-      <h2 class="sec-title">Qué ve el huésped</h2>
-      <ul class="checks">
-        <li><b>Wifi:</b> nombre de la red y clave, que se copia con un toque.</li>
-        <li><b>Recepción:</b> horario, check-in, check-out, teléfono y WhatsApp.</li>
-        <li><b>Desayuno y restaurante:</b> horarios y qué se sirve.</li>
-        <li><b>Habitación y servicios:</b> limpieza, servicio de habitaciones, piscina, parking.</li>
-        <li><b>Qué hacer cerca:</b> tus recomendaciones de la zona.</li>
-        <li><b>Valóranos:</b> botones directos para opinar en Google y TripAdvisor.</li>
-      </ul>
+  <div class="wrap">
+    <h2 class="sec-title">Qué ve el huésped</h2>
+    <div class="ve-grid">
+      <div class="ve p3d"><span class="ve-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="0.8" fill="currentColor"/></svg></span><b>Wifi</b><small>Red y clave con un toque</small></div>
+      <div class="ve p3d"><span class="ve-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h16M6 17a6 6 0 0 1 12 0M12 8v3M10 8h4M3 20h18"/></svg></span><b>Recepción</b><small>Horario, check-in y WhatsApp</small></div>
+      <div class="ve p3d"><span class="ve-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg></span><b>Desayuno</b><small>Horarios y qué se sirve</small></div>
+      <div class="ve p3d"><span class="ve-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 15V5a2 2 0 0 1 4 0M16 15V5a2 2 0 0 0-4 0M8 9h8"/></svg></span><b>Servicios</b><small>Limpieza, piscina, parking</small></div>
+      <div class="ve p3d"><span class="ve-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><b>Qué hacer cerca</b><small>Tus recomendaciones</small></div>
+      <div class="ve p3d"><span class="ve-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><b>Valóranos</b><small>Google y TripAdvisor</small></div>
     </div>
-    <div>
-      <h2 class="sec-title">Dónde se pone</h2>
-      <p class="sec-lede" style="margin-bottom:18px">Un solo diseño que sirve en cualquier parte del hotel.</p>
+    <div class="donde">
+      <h3>Dónde se pone</h3>
       <div class="places">
-        <span class="place">Habitaciones</span><span class="place">Recepción</span><span class="place">Hall</span><span class="place">Buffet y restaurante</span><span class="place">Piscina y exteriores</span>
+        <span class="place">Habitaciones</span><span class="place">Recepción</span><span class="place">Salón del apartamento</span><span class="place">Restaurante</span><span class="place">Piscina y exteriores</span>
       </div>
-      <p class="sec-lede" style="margin:24px 0 0">Cuando quieras, te decimos cuántas veces se ha abierto la información de tu hotel.</p>
     </div>
   </div>
 </section>
@@ -266,8 +285,11 @@
   <div class="wrap grid2">
     <div>
       <h2 class="sec-title">Precio</h2>
-      <p class="sec-lede">Incluye <b>todo el servicio de Google Maps de Nornorte</b> (ficha cuidada cada semana, escaneo de 25 zonas, respuesta a todas las reseñas, informe mensual y llamada mensual) <b>y la mini web</b> para tus huéspedes. Sin permanencia.</p>
-      <p class="sec-lede" style="margin-top:12px">El primer mes es el de más trabajo: diseñamos tu tarjeta, creamos la mini web, optimizamos tu ficha de Google y respondemos todas tus reseñas antiguas. Por eso hay una puesta en marcha, de pago único, y todo se queda en tu ficha aunque te vayas.</p>
+      <ul class="precio-claves">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.4" stroke-linecap="round"/></svg> Todo el servicio de Google Maps</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.4" stroke-linecap="round"/></svg> Mini web y 5 tarjetas NFC</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.4" stroke-linecap="round"/></svg> Sin permanencia</li>
+      </ul>
     </div>
     <div class="price p3d">
       <div class="price-row"><span>Puesta en marcha, una sola vez<small>Diseño, mini web, 5 tarjetas NFC programadas y ficha de Google a punto</small></span><strong>450 € <small class="iva">+ IVA</small></strong></div>
@@ -281,8 +303,8 @@
 <section id="contacto">
   <div class="wrap grid2">
     <div>
-      <h2 class="sec-title">Te lo enseñamos con tu hotel</h2>
-      <p class="sec-lede">Déjanos tus datos y te mandamos un ejemplo con el nombre y los colores de tu hotel, sin compromiso.</p>
+      <h2 class="sec-title">Te lo enseñamos con tu alojamiento</h2>
+      <p class="sec-lede">Déjanos tus datos y te mandamos un ejemplo con su nombre y sus colores, sin compromiso.</p>
     </div>
     <div class="card p3d">
       <form id="hotelForm" action="https://formspree.io/f/xljdeond" method="POST">
@@ -291,12 +313,13 @@
         <input type="hidden" name="origen" value="Página Nornorte Hoteles (nornorte.es/hoteles)">
         <div class="two">
           <div class="field"><label for="nombre">Tu nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="hotel">Nombre del hotel</label><input id="hotel" name="hotel" type="text" autocomplete="organization" required></div>
+          <div class="field"><label for="hotel">Nombre del alojamiento</label><input id="hotel" name="hotel" type="text" autocomplete="organization" required></div>
         </div>
         <div class="two">
           <div class="field"><label for="localidad">Localidad</label><input id="localidad" name="localidad" type="text" autocomplete="address-level2" required></div>
-          <div class="field"><label for="habitaciones">Habitaciones (aprox.)</label><input id="habitaciones" name="habitaciones" type="number" min="1" inputmode="numeric"></div>
+          <div class="field"><label for="habitaciones">Habitaciones o plazas</label><input id="habitaciones" name="habitaciones" type="number" min="1" inputmode="numeric"></div>
         </div>
+        <div class="field"><label for="tipo">Tipo de alojamiento</label><select id="tipo" name="tipo"><option>Hotel</option><option>Casa rural</option><option>Apartamento turístico</option><option>Airbnb o piso turístico</option><option>Hostal o albergue</option><option>Otro</option></select></div>
         <div class="two">
           <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label for="telefono">Teléfono (opcional)</label><input id="telefono" name="telefono" type="tel" autocomplete="tel"></div>
