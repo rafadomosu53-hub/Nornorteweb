@@ -13,11 +13,19 @@
 <meta property="og:image" content="https://www.nornorte.es/guia/compartir.jpg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Nornorte">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nornorte, SEO local en Google Maps">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nornorte · Un solo negocio por zona y sector en Google Maps">
+<meta name="twitter:description" content="Si trabajamos contigo, no trabajamos con tu competencia. Ficha de Google cuidada cada semana, medición en 25 zonas y tarjeta NFC para reseñas reales.">
+<meta name="theme-color" content="#123B8A">
+<script>document.documentElement.className+=' js';</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://www.nornorte.es/#negocio",
   "name": "Nornorte",
   "url": "https://www.nornorte.es/",
   "email": "gerencia@nornorte.es",
@@ -32,10 +40,13 @@
   "areaServed": [
     { "@type": "Country", "name": "España" }
   ],
-  "priceRange": "300 € + 75 €/mes (+ IVA)",
+  "sameAs": ["https://www.instagram.com/nornorte.es"],
+  "priceRange": "€€",
+  "knowsAbout": ["SEO local", "Google Maps", "Perfil de Empresa de Google", "Reseñas de Google", "Tarjetas NFC"],
   "makesOffer": [
-    { "@type": "Offer", "name": "Puesta en marcha (pago único)", "price": "300", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "300", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
-    { "@type": "Offer", "name": "Cuota mensual desde el segundo mes, sin permanencia", "price": "75", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "price": "75", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } }
+    { "@type": "Offer", "name": "Puesta en marcha (pago único)", "itemOffered": { "@type": "Service", "name": "Nornorte: posicionamiento en Google Maps + tarjeta NFC", "serviceType": "SEO local en Google Maps" }, "priceSpecification": { "@type": "PriceSpecification", "price": "300", "priceCurrency": "EUR", "valueAddedTaxIncluded": false } },
+    { "@type": "Offer", "name": "Cuota mensual desde el segundo mes, sin permanencia", "itemOffered": { "@type": "Service", "name": "Nornorte: posicionamiento en Google Maps + tarjeta NFC", "serviceType": "SEO local en Google Maps" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": "75", "priceCurrency": "EUR", "unitCode": "MON", "valueAddedTaxIncluded": false } },
+    { "@type": "Offer", "name": "Nornorte Hoteles", "url": "https://www.nornorte.es/hoteles/", "itemOffered": { "@type": "Service", "@id": "https://www.nornorte.es/hoteles/#servicio", "name": "Nornorte Hoteles" } }
   ]
 }
 </script>
@@ -45,7 +56,9 @@
   "@type": "WebSite",
   "name": "Nornorte",
   "alternateName": "nornorte.es",
-  "url": "https://www.nornorte.es/"
+  "url": "https://www.nornorte.es/",
+  "inLanguage": "es-ES",
+  "publisher": { "@id": "https://www.nornorte.es/#negocio" }
 }
 </script>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -72,7 +85,7 @@
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top:88px;}
   body{
     font-family:var(--sans);
     color:var(--text);
@@ -443,8 +456,10 @@
     font-size:1rem;
     transition:border-color 0.2s ease;
   }
-  .field input::placeholder, .field textarea::placeholder{color:#b6b6bb;}
-  .field input:focus, .field textarea:focus{outline:none; border-color:var(--accent);}
+  .field input::placeholder, .field textarea::placeholder{color:#8a8a90;}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 2px 0 0 var(--accent);}
+  .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--brand-soft); outline-offset:2px;}
   .field textarea{resize:vertical; min-height:80px;}
   .btn-submit{
     background:var(--accent);
@@ -514,13 +529,13 @@
   }
 
   /* ---------- SCROLL REVEAL ---------- */
-  .reveal{
+  .js .reveal{
     opacity:0;
     transform:translateY(28px);
     transition:opacity 0.8s cubic-bezier(0.2,0.7,0.2,1), transform 0.8s cubic-bezier(0.2,0.7,0.2,1);
     will-change:opacity, transform;
   }
-  .reveal.in-view{opacity:1; transform:translateY(0);}
+  .js .reveal.in-view{opacity:1; transform:translateY(0);}
   /* ---------- PROFUNDIDAD 3D AL DESPLAZAR ---------- */
   /* --p va de 0 (entrando por abajo) a 1 (en su sitio). Sin JS o con movimiento reducido, --p vale 1. */
   .p3d{
@@ -547,9 +562,10 @@
   .reveal-2{transition-delay:0.15s;}
   .reveal-3{transition-delay:0.25s;}
 
-  .hero h1.reveal, .hero p.lede.reveal, .hero .cta-row.reveal, .hero .eyebrow.reveal{
-    transform:translateY(18px);
-  }
+  .hero-in{animation:hero-in .8s cubic-bezier(0.2,0.7,0.2,1) both;}
+  .hero-in.reveal-1{animation-delay:.05s;} .hero-in.reveal-3{animation-delay:.25s;}
+  @keyframes hero-in{from{opacity:.01; transform:translateY(18px);} to{opacity:1; transform:none;}}
+  @media (prefers-reduced-motion: reduce){.hero-in{animation:none;}}
 
   #hero-visual-wrap{
     transition:transform 0.1s linear;
@@ -597,9 +613,9 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow reveal">SEO local premium · Un solo negocio por zona y sector</p>
-    <h1 class="reveal reveal-1">Que te elijan a ti en Google Maps. No a tu competencia.</h1>
-    <div class="cta-row reveal reveal-3">
+    <p class="eyebrow hero-in">SEO local premium · Un solo negocio por zona y sector</p>
+    <h1 class="hero-in reveal-1">Que te elijan a ti en Google Maps. No a tu competencia.</h1>
+    <div class="cta-row hero-in reveal-3">
       <a href="#contacto" class="pill pill-accent">Comprobar si mi zona está libre</a>
       <a href="#exclusividad" class="pill pill-outline">Cómo funciona la exclusividad</a>
     </div>
@@ -753,14 +769,14 @@
       <p class="sub">Cada negocio tiene su propio panel privado, con un enlace solo para él. Se actualiza solo cada lunes y lo abres desde el ordenador o el móvil, sin instalar nada.</p>
     </div>
     <div class="panel-tabs reveal" role="tablist" aria-label="Pantallas del panel">
-      <button type="button" role="tab" aria-selected="true" data-img="inicio" data-txt="&lt;strong&gt;Inicio.&lt;/strong&gt; Tu puntuación, en cuántas zonas sales entre los 3 primeros, tus reseñas nuevas y lo que hemos hecho este mes, de un vistazo.">Inicio</button>
-      <button type="button" role="tab" aria-selected="false" data-img="mapa" data-txt="&lt;strong&gt;Tu mapa.&lt;/strong&gt; Tu posición en Google Maps desde 25 puntos de tu zona: cómo empezaste y cómo estás ahora, zona por zona.">Tu mapa</button>
-      <button type="button" role="tab" aria-selected="false" data-img="resenas" data-txt="&lt;strong&gt;Reseñas.&lt;/strong&gt; Cuántas llegan cada mes frente a tu competencia, qué elogian y de qué se quejan tus clientes, y cuántas están sin responder.">Reseñas</button>
-      <button type="button" role="tab" aria-selected="false" data-img="competencia" data-txt="&lt;strong&gt;Competencia.&lt;/strong&gt; Tu puesto entre todos los negocios que salen en tus búsquedas y si ChatGPT y Google te recomiendan cuando alguien pregunta.">Competencia</button>
-      <button type="button" role="tab" aria-selected="false" data-img="ficha" data-txt="&lt;strong&gt;Tu ficha de Google.&lt;/strong&gt; La revisamos cada semana punto por punto: categorías, descripción, horario, fotos y publicaciones.">Tu ficha de Google</button>
-      <button type="button" role="tab" aria-selected="false" data-img="informe" data-txt="&lt;strong&gt;Informe mensual en PDF.&lt;/strong&gt; Cada fin de mes, tus resultados en un documento listo para descargar, guardar o enseñar a tu socio.">Informe PDF</button>
+      <button type="button" role="tab" aria-controls="panel-vista" aria-selected="true" data-img="inicio" data-txt="&lt;strong&gt;Inicio.&lt;/strong&gt; Tu puntuación, en cuántas zonas sales entre los 3 primeros, tus reseñas nuevas y lo que hemos hecho este mes, de un vistazo.">Inicio</button>
+      <button type="button" role="tab" aria-controls="panel-vista" aria-selected="false" data-img="mapa" data-txt="&lt;strong&gt;Tu mapa.&lt;/strong&gt; Tu posición en Google Maps desde 25 puntos de tu zona: cómo empezaste y cómo estás ahora, zona por zona.">Tu mapa</button>
+      <button type="button" role="tab" aria-controls="panel-vista" aria-selected="false" data-img="resenas" data-txt="&lt;strong&gt;Reseñas.&lt;/strong&gt; Cuántas llegan cada mes frente a tu competencia, qué elogian y de qué se quejan tus clientes, y cuántas están sin responder.">Reseñas</button>
+      <button type="button" role="tab" aria-controls="panel-vista" aria-selected="false" data-img="competencia" data-txt="&lt;strong&gt;Competencia.&lt;/strong&gt; Tu puesto entre todos los negocios que salen en tus búsquedas y si ChatGPT y Google te recomiendan cuando alguien pregunta.">Competencia</button>
+      <button type="button" role="tab" aria-controls="panel-vista" aria-selected="false" data-img="ficha" data-txt="&lt;strong&gt;Tu ficha de Google.&lt;/strong&gt; La revisamos cada semana punto por punto: categorías, descripción, horario, fotos y publicaciones.">Tu ficha de Google</button>
+      <button type="button" role="tab" aria-controls="panel-vista" aria-selected="false" data-img="informe" data-txt="&lt;strong&gt;Informe mensual en PDF.&lt;/strong&gt; Cada fin de mes, tus resultados en un documento listo para descargar, guardar o enseñar a tu socio.">Informe PDF</button>
     </div>
-    <div class="panel-stage reveal">
+    <div class="panel-stage reveal" id="panel-vista" role="tabpanel" aria-label="Captura del panel">
       <span class="sello-ejemplo">Datos de ejemplo</span>
       <div class="navegador p3d">
         <div class="navegador-barra" aria-hidden="true"><i></i><i></i><i></i><span>panel.nornorte.es</span></div>
@@ -923,13 +939,14 @@
     </div>
     <form class="reveal reveal-1" action="https://formspree.io/f/xljdeond" method="POST">
       <input type="hidden" name="_subject" value="¿Zona libre? Nuevo contacto desde la web — Nornorte">
+      <div class="hp" aria-hidden="true"><label for="_gotcha">No rellenar</label><input id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
       <div class="field">
         <label for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
       </div>
       <div class="field">
         <label for="negocio">Nombre del negocio</label>
-        <input id="negocio" name="negocio" type="text" placeholder="Ej. Clínica Dental Sonrisa" required>
+        <input id="negocio" name="negocio" type="text" autocomplete="organization" placeholder="Ej. Clínica Dental Sonrisa" required>
       </div>
       <div class="field">
         <label for="tipo">Tipo de negocio</label>
@@ -937,15 +954,15 @@
       </div>
       <div class="field">
         <label for="localidad">Dirección y localidad del negocio</label>
-        <input id="localidad" name="localidad" type="text" placeholder="Ej. Calle Mayor 10, Valencia" required>
+        <input id="localidad" name="localidad" type="text" autocomplete="street-address" placeholder="Ej. Calle Mayor 10, Valencia" required>
       </div>
       <div class="field">
         <label for="telefono">Teléfono o WhatsApp</label>
-        <input id="telefono" name="telefono" type="tel" placeholder="600 000 000" required>
+        <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="600 000 000" required>
       </div>
       <div class="field">
         <label for="email">Correo electrónico</label>
-        <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com">
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
       </div>
       <div class="field">
         <label for="mensaje">¿Cuánto te deja de media un cliente nuevo? Y lo que quieras contarnos (opcional)</label>
@@ -983,6 +1000,7 @@
   var tabs = document.querySelectorAll('.panel-tabs button');
   var pImg = document.getElementById('panel-img'), pEnl = document.getElementById('panel-enlace'), pPie = document.getElementById('panel-pie');
   tabs.forEach(function(t){
+    t.addEventListener('pointerenter', function(){ (new Image()).src = '/panel/' + t.getAttribute('data-img') + '.webp'; }, {once:true});
     t.addEventListener('click', function(){
       tabs.forEach(function(o){ o.setAttribute('aria-selected', o === t ? 'true' : 'false'); });
       var src = '/panel/' + t.getAttribute('data-img') + '.webp';
