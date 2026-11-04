@@ -521,6 +521,28 @@
     will-change:opacity, transform;
   }
   .reveal.in-view{opacity:1; transform:translateY(0);}
+  /* ---------- PROFUNDIDAD 3D AL DESPLAZAR ---------- */
+  /* --p va de 0 (entrando por abajo) a 1 (en su sitio). Sin JS o con movimiento reducido, --p vale 1. */
+  .p3d{
+    --q:calc(1 - var(--p,1));
+    transform:perspective(1100px) translateY(calc(var(--q) * var(--ty,60px))) rotateX(calc(var(--q) * var(--rx,24deg))) rotateY(calc(var(--q) * var(--ry,0deg))) scale(calc(1 - var(--q) * 0.1));
+    filter:blur(calc(var(--q) * var(--bl,6px)));
+    opacity:calc(0.1 + var(--p,1) * 0.9);
+    transform-origin:50% 100%;
+    will-change:transform, filter, opacity;
+  }
+  .perdida.p3d:nth-child(odd){--ry:16deg; transform-origin:100% 100%;}
+  .perdida.p3d:nth-child(even){--ry:-16deg; transform-origin:0% 100%;}
+  .navegador.p3d{--rx:32deg; --ty:40px; --bl:4px;}
+  .nfc-foto.p3d{--rx:10deg; --ry:18deg; --bl:4px; transform-origin:0% 50%;}
+  .moviles figure.p3d:nth-child(1){--ry:28deg; --rx:8deg; transform-origin:100% 50%;}
+  .moviles figure.p3d:nth-child(2){--rx:26deg;}
+  .moviles figure.p3d:nth-child(3){--ry:-28deg; --rx:8deg; transform-origin:0% 50%;}
+  @media (max-width:760px){
+    .perdida.p3d:nth-child(n){--ry:0deg; --rx:30deg; transform-origin:50% 100%;}
+    .nfc-foto.p3d{--ry:0deg; --rx:22deg; transform-origin:50% 100%;}
+  }
+  @media (prefers-reduced-motion: reduce){.p3d{transform:none !important; filter:none !important; opacity:1 !important;}}
   .reveal-1{transition-delay:0.05s;}
   .reveal-2{transition-delay:0.15s;}
   .reveal-3{transition-delay:0.25s;}
@@ -624,19 +646,19 @@
       <h2>Tu negocio está perdiendo dinero cada mes. Y no lo ves.</h2>
     </div>
     <div class="perdidas-grid">
-      <div class="perdida reveal">
+      <div class="perdida p3d">
         <h3>Una ficha de Google sin cuidar</h3>
         <p>Horarios que no cuadran, fotos viejas, categorías que no son, sin novedades. Quien busca ve otra ficha mejor cuidada a 300 metros y <b>se va con ella sin llamarte</b>.</p>
       </div>
-      <div class="perdida reveal reveal-1">
+      <div class="perdida p3d">
         <h3>Pocas reseñas, o sin responder</h3>
         <p>Tus clientes contentos se van sin dejar su opinión y las críticas se quedan sin respuesta. Entre dos negocios parecidos, <b>la gente elige al que tiene más y mejores reseñas</b>.</p>
       </div>
-      <div class="perdida reveal reveal-1">
+      <div class="perdida p3d">
         <h3>No sabes qué piensan tus clientes</h3>
         <p>Sin medir qué se repite en sus opiniones, ni si vuelven, no sabes qué te hace perder clientes. <b>Lo que no se mide no se puede arreglar</b>.</p>
       </div>
-      <div class="perdida reveal reveal-2">
+      <div class="perdida p3d">
         <h3>No sabes qué hace tu competencia</h3>
         <p>El cliente indeciso compara y se queda con quien sale antes y transmite más confianza. Si no sabes <b>por qué tu competencia te gana en el mapa</b>, se los sigue llevando.</p>
       </div>
@@ -682,7 +704,7 @@
       </div>
     </div>
     <div class="nfc-banner reveal">
-      <picture class="nfc-foto">
+      <picture class="nfc-foto p3d">
         <source srcset="/img/soportes-nfc.webp" type="image/webp">
         <img src="/img/soportes-nfc.jpg" alt="Soportes NFC para reseñas de Google" width="1000" height="750" loading="lazy">
       </picture>
@@ -740,7 +762,7 @@
     </div>
     <div class="panel-stage reveal">
       <span class="sello-ejemplo">Datos de ejemplo</span>
-      <div class="navegador">
+      <div class="navegador p3d">
         <div class="navegador-barra" aria-hidden="true"><i></i><i></i><i></i><span>panel.nornorte.es</span></div>
         <a id="panel-enlace" href="/panel/inicio.webp" target="_blank" rel="noopener" title="Ver la captura en grande">
           <img id="panel-img" src="/panel/inicio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Panel del cliente de Nornorte con datos de ejemplo de un negocio inventado">
@@ -753,9 +775,9 @@
       <h3 class="reveal">Y en el móvil, igual de claro</h3>
       <p class="reveal">Míralo entre cliente y cliente: lo importante cabe en la pantalla del teléfono.</p>
       <div class="moviles reveal">
-        <figure><img src="/panel/movil-inicio.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Inicio del panel en el móvil, con datos de ejemplo"><figcaption>Inicio</figcaption></figure>
-        <figure><img src="/panel/movil-mapa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Mapa de posiciones en Google Maps en el móvil, con datos de ejemplo"><figcaption>Tu mapa</figcaption></figure>
-        <figure><img src="/panel/movil-resenas.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Reseñas en el móvil, con datos de ejemplo"><figcaption>Reseñas</figcaption></figure>
+        <figure class="p3d"><img src="/panel/movil-inicio.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Inicio del panel en el móvil, con datos de ejemplo"><figcaption>Inicio</figcaption></figure>
+        <figure class="p3d"><img src="/panel/movil-mapa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Mapa de posiciones en Google Maps en el móvil, con datos de ejemplo"><figcaption>Tu mapa</figcaption></figure>
+        <figure class="p3d"><img src="/panel/movil-resenas.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Reseñas en el móvil, con datos de ejemplo"><figcaption>Reseñas</figcaption></figure>
       </div>
     </div>
     <p class="panel-nota">Capturas reales del panel con datos de ejemplo: el negocio, sus competidores y sus cifras son inventados. Los resultados de cada negocio son distintos y nadie puede garantizar posiciones en Google.</p>
@@ -986,6 +1008,31 @@
     revealEls.forEach(function(el){ io.observe(el); });
   } else {
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  // Profundidad 3D ligada al desplazamiento: los bloques se enderezan y se enfocan al entrar.
+  var p3d = Array.prototype.slice.call(document.querySelectorAll('.p3d'));
+  if(p3d.length){
+    var p3dTick = false, p3dTop = [];
+    // Posición sin transformar (offsetTop), para que el propio giro no altere la medida.
+    function medir3d(){
+      p3dTop = p3d.map(function(el){ var y = 0, n = el; while(n){ y += n.offsetTop; n = n.offsetParent; } return y; });
+    }
+    function pintar3d(){
+      var vh = window.innerHeight, sy = window.scrollY;
+      p3d.forEach(function(el, i){
+        var top = p3dTop[i] - sy;
+        var t = (vh - top) / (vh * 0.45);
+        t = t < 0 ? 0 : (t > 1 ? 1 : t);
+        t = 1 - Math.pow(1 - t, 3);
+        el.style.setProperty('--p', t.toFixed(3));
+      });
+      p3dTick = false;
+    }
+    medir3d(); pintar3d();
+    window.addEventListener('scroll', function(){ if(!p3dTick){ p3dTick = true; requestAnimationFrame(pintar3d); } }, {passive:true});
+    window.addEventListener('resize', function(){ medir3d(); pintar3d(); });
+    window.addEventListener('load', function(){ medir3d(); pintar3d(); });
   }
 
   // Subtle parallax on hero visual
