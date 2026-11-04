@@ -564,7 +564,16 @@
   .nav-actions{display:flex; gap:10px; align-items:center;}
   .nav-guide{font-weight:600; font-size:0.95rem; color:var(--accent); text-decoration:none; padding:8px 4px; white-space:nowrap;}
   .nav-guide:hover{text-decoration:underline;}
-  @media (max-width:640px){.nav-guide{display:none;}}
+  .nav-links{display:flex; gap:10px; align-items:center;}
+  .nav-hoteles{display:inline-flex; align-items:center; gap:7px; background:#C7D8EF; color:var(--brand); border-radius:999px; padding:8px 16px; transition:background .2s ease, transform .2s ease;}
+  .nav-hoteles:hover{text-decoration:none; background:#B5CBE8; transform:translateY(-1px);}
+  @media (max-width:640px){
+    .nav-inner{flex-wrap:wrap; row-gap:8px; padding-bottom:10px;}
+    .nav-actions{display:contents;}
+    .nav-links{order:3; width:100%; justify-content:center; gap:6px; border-top:1px solid var(--line); padding-top:8px;}
+    .nav-guide{font-size:0.86rem; padding:6px 8px;}
+    .nav-hoteles{padding:6px 13px;}
+  }
   .guide{padding:0 0 120px;}
   @media (max-width:760px){.guide{padding:0 0 80px;}}
   .guide-card{display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center; background:var(--brand-deep); color:#fff; border-radius:var(--radius); padding:48px 56px;}
@@ -587,9 +596,11 @@
   <div class="nav-inner">
     <a class="wordmark logo-marca" href="/" aria-label="Nornorte, ir al inicio"><img src="/logo/logo-horizontal-azul.svg" alt="Nornorte" width="246" height="54"></a>
     <div class="nav-actions">
-      <a href="https://panel.nornorte.es/escaneo" class="nav-guide">Escaneo gratis</a>
-      <a href="/guia/" class="nav-guide">Guía gratis</a>
-      <a href="/hoteles/" class="nav-guide">Hoteles</a>
+      <div class="nav-links">
+        <a href="https://panel.nornorte.es/escaneo" class="nav-guide">Escaneo gratis</a>
+        <a href="/guia/" class="nav-guide">Guía gratis</a>
+        <a href="/hoteles/" class="nav-guide nav-hoteles"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="11" r="2" stroke="currentColor" stroke-width="1.9"/></svg>Hoteles</a>
+      </div>
       <a href="#contacto" class="pill pill-dark">¿Mi zona está libre?</a>
     </div>
   </div>
