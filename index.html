@@ -373,26 +373,12 @@
   }
   .service li:first-child{border-top:none;}
   .service li svg{flex-shrink:0; margin-top:3px;}
-  .mapa-zonas{position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:8px; max-width:300px; margin:14px auto 8px; padding:16px; border-radius:18px; background:#fff linear-gradient(135deg,rgba(199,216,239,.35) 25%,transparent 25%,transparent 50%,rgba(199,216,239,.35) 50%,rgba(199,216,239,.35) 75%,transparent 75%) 0 0/28px 28px;}
-  .mz{aspect-ratio:1; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; color:#fff; box-shadow:0 4px 10px rgba(13,13,15,.12);}
-  .mz-a{background:#1e8e4f;} .mz-b{background:#e8a317;} .mz-c{background:#e5484d;}
-  .service .mz-leyenda{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px 12px; font-size:0.75rem; color:var(--text-muted); margin-bottom:14px;}
-  .mz-leyenda span{white-space:nowrap; display:inline-flex; align-items:center; gap:4px;}
-  .mz-leyenda i{width:10px; height:10px; border-radius:50%; display:inline-block;}
-  .nfc-muestras{position:relative; height:205px; margin:8px 0 18px;}
-  .mini-tarjeta{position:absolute; top:52px; width:clamp(118px,34%,170px); height:auto; aspect-ratio:1.6; border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; justify-content:flex-end; gap:2px; box-shadow:0 14px 30px rgba(13,13,15,.18); transition:transform .3s ease;}
-  .mini-tarjeta b{font-size:0.95rem; line-height:1.2;}
-  .mini-tarjeta > span{font-size:0.72rem; opacity:.85;}
-  .mc-top{position:absolute; top:12px; left:14px; right:14px; display:flex; justify-content:space-between; align-items:center;}
-  .mc-logo{width:28px; height:28px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem;}
-  .mc-1{left:0; transform:rotate(-8deg); background:#3b2418; color:#f3e3c3;} .mc-1 .mc-logo{background:#f3e3c3; color:#3b2418;}
-  .mc-2{left:50%; transform:translateX(-50%); top:0; z-index:2; background:#fff; color:#0f5c63; border:1px solid #e2e2e5;} .mc-2 .mc-logo{background:#0f5c63; color:#fff;}
-  .mc-3{right:0; transform:rotate(8deg); background:#123B8A; color:#fff;} .mc-3 .mc-logo{background:#C7D8EF; color:#123B8A;}
-  .service:hover .mc-1{transform:rotate(-12deg) translateX(-6px);} .service:hover .mc-3{transform:rotate(12deg) translateX(6px);} .service:hover .mc-2{transform:translateX(-50%) translateY(-6px);}
-  .nfc-ejemplo{position:absolute; bottom:0; left:50%; transform:translateX(-50%); font-size:0.7rem; color:var(--text-muted); white-space:nowrap;}
-  .service .nfc-sello{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; font-weight:700; font-size:0.95rem; padding:9px 16px; border-radius:999px; margin-bottom:14px;}
-  @media (max-width:420px){.mini-tarjeta{padding:10px;} .mini-tarjeta b{font-size:0.78rem;} .mini-tarjeta > span{display:none;} .mc-logo{width:22px; height:22px; font-size:0.7rem;} .nfc-muestras{height:150px;}}
-  @media (prefers-reduced-motion: reduce){.mini-tarjeta{transition:none;}}
+  .nfc-banner{display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center; margin-top:24px; background:var(--bg-alt); border-radius:var(--radius); padding:20px 40px 20px 20px;}
+  .nfc-foto img{display:block; width:100%; height:auto; border-radius:16px;}
+  .nfc-banner h3{font-size:clamp(1.4rem,2.4vw,1.9rem); margin:6px 0 10px;}
+  .nfc-banner-texto > p:last-child{color:var(--text-muted); font-size:1.02rem;}
+  @media (max-width:760px){.nfc-banner{grid-template-columns:1fr; gap:20px; padding:16px 16px 26px;}}
+  .nfc-sello{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; font-weight:700; font-size:0.95rem; padding:9px 16px; border-radius:999px; margin-bottom:14px;}
 
   /* ---------- PROCESS ---------- */
   .process{background:var(--bg); padding-top:60px;}
@@ -698,8 +684,6 @@
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" stroke="#123B8A" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" stroke="#123B8A" stroke-width="1.7"/></svg>
         </div>
         <h3>Posicionamiento en Google Maps</h3>
-        <div class="mapa-zonas" aria-label="Ejemplo de medición de posición en 25 zonas"><span class="mz mz-a">3</span><span class="mz mz-a">2</span><span class="mz mz-a">2</span><span class="mz mz-b">4</span><span class="mz mz-b">6</span><span class="mz mz-a">2</span><span class="mz mz-a">1</span><span class="mz mz-a">1</span><span class="mz mz-a">2</span><span class="mz mz-b">4</span><span class="mz mz-a">2</span><span class="mz mz-a">1</span><span class="mz mz-a">1</span><span class="mz mz-a">1</span><span class="mz mz-a">3</span><span class="mz mz-a">3</span><span class="mz mz-a">1</span><span class="mz mz-a">1</span><span class="mz mz-a">2</span><span class="mz mz-b">5</span><span class="mz mz-b">5</span><span class="mz mz-a">3</span><span class="mz mz-a">2</span><span class="mz mz-b">4</span><span class="mz mz-c">8</span></div>
-        <p class="mz-leyenda"><span><i class="mz-a"></i>Top 3</span><span><i class="mz-b"></i>4 a 6</span><span><i class="mz-c"></i>7 o más</span><em>Ejemplo</em></p>
         <ul>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Ficha de Google completa y revisada</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Una publicación por semana</li>
@@ -711,18 +695,22 @@
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#123B8A" stroke-width="1.7"/><path d="M9 7h6M9 11h6" stroke="#123B8A" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="16" r="1.4" fill="#123B8A"/></svg>
         </div>
         <h3>Tarjetas NFC para reseñas</h3>
-        <div class="nfc-muestras" aria-label="Ejemplos de tarjetas NFC personalizadas">
-          <div class="mini-tarjeta mc-1"><div class="mc-top"><span class="mc-logo">A</span><svg class="mc-ondas" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 7c2 3 2 7 0 10M12 4.5c3.3 4.5 3.3 10.5 0 15M16 2c4.5 6 4.5 14 0 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><b>Café Aurora</b><span>Acerca tu móvil</span></div>
-          <div class="mini-tarjeta mc-2"><div class="mc-top"><span class="mc-logo">S</span><svg class="mc-ondas" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 7c2 3 2 7 0 10M12 4.5c3.3 4.5 3.3 10.5 0 15M16 2c4.5 6 4.5 14 0 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><b>Clínica Sonrisa</b><span>Tu opinión nos ayuda</span></div>
-          <div class="mini-tarjeta mc-3"><div class="mc-top"><span class="mc-logo">R</span><svg class="mc-ondas" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 7c2 3 2 7 0 10M12 4.5c3.3 4.5 3.3 10.5 0 15M16 2c4.5 6 4.5 14 0 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><b>Taller Ruiz</b><span>Déjanos tu reseña</span></div>
-          <span class="nfc-ejemplo">Diseños de ejemplo</span>
-        </div>
-        <p class="nfc-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.5-.8L12 3z" fill="currentColor"/></svg> Personalizada a tu gusto</p>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Tu logo, tus colores y tu mensaje</strong></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Diseño personalizado para tu negocio</strong></li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Un toque, sin apps ni buscar tu negocio</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Más fácil pedir reseñas reales, a todos por igual</li>
         </ul>
+      </div>
+    </div>
+    <div class="nfc-banner reveal">
+      <picture class="nfc-foto">
+        <source srcset="/img/soportes-nfc.webp" type="image/webp">
+        <img src="/img/soportes-nfc.jpg" alt="Soportes NFC para reseñas de Google" width="1000" height="750" loading="lazy">
+      </picture>
+      <div class="nfc-banner-texto">
+        <p class="nfc-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.5-.8L12 3z" fill="currentColor"/></svg> Personalizada a tu gusto</p>
+        <h3>Tu logo, tus colores y tu mensaje</h3>
+        <p>Tarjeta o soporte de mesa, diseñados para tu negocio.</p>
       </div>
     </div>
   </div>
