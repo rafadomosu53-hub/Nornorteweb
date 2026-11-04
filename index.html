@@ -373,6 +373,12 @@
   }
   .service li:first-child{border-top:none;}
   .service li svg{flex-shrink:0; margin-top:3px;}
+  .nfc-banner{display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center; margin-top:24px; background:var(--bg-alt); border-radius:var(--radius); padding:20px 40px 20px 20px;}
+  .nfc-foto img{display:block; width:100%; height:auto; border-radius:16px;}
+  .nfc-banner h3{font-size:clamp(1.4rem,2.4vw,1.9rem); margin:6px 0 10px;}
+  .nfc-banner-texto > p:last-child{color:var(--text-muted); font-size:1.02rem;}
+  @media (max-width:760px){.nfc-banner{grid-template-columns:1fr; gap:20px; padding:16px 16px 26px;}}
+  .nfc-sello{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; font-weight:700; font-size:0.95rem; padding:9px 16px; border-radius:999px; margin-bottom:14px;}
 
   /* ---------- PROCESS ---------- */
   .process{background:var(--bg); padding-top:60px;}
@@ -690,10 +696,21 @@
         </div>
         <h3>Tarjetas NFC para reseñas</h3>
         <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Tarjeta física con chip NFC</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> <strong>Diseño personalizado para tu negocio</strong></li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Un toque, sin apps ni buscar tu negocio</li>
           <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Más fácil pedir reseñas reales, a todos por igual</li>
         </ul>
+      </div>
+    </div>
+    <div class="nfc-banner reveal">
+      <picture class="nfc-foto">
+        <source srcset="/img/soportes-nfc.webp" type="image/webp">
+        <img src="/img/soportes-nfc.jpg" alt="Soportes NFC para reseñas de Google" width="1000" height="750" loading="lazy">
+      </picture>
+      <div class="nfc-banner-texto">
+        <p class="nfc-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.5-.8L12 3z" fill="currentColor"/></svg> Personalizada a tu gusto</p>
+        <h3>Tu logo, tus colores y tu mensaje</h3>
+        <p>Tarjeta o soporte de mesa, diseñados para tu negocio.</p>
       </div>
     </div>
   </div>
