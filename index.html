@@ -263,7 +263,34 @@
 
   /* ---------- AUTOMATION ---------- */
   .automation{background:var(--bg-alt); padding-bottom:60px;}
-  .automation .service{background:#fff; max-width:640px; margin:0 auto;}
+  .resenas-grid{display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; max-width:1000px; margin:0 auto;}
+  @media (max-width:860px){.resenas-grid{grid-template-columns:1fr; gap:32px;}}
+  .resenas-feed{position:relative; background:#fff; border-radius:var(--radius); padding:28px 24px 12px; box-shadow:0 24px 60px rgba(18,59,138,.12);}
+  .resena-ejemplo{position:absolute; top:-12px; right:20px; background:var(--brand); color:#fff; font-size:0.7rem; font-weight:700; padding:5px 12px; border-radius:999px;}
+  .resena{padding:14px 0 16px; border-bottom:1px solid #ebebef;}
+  .resena:last-child{border-bottom:0;}
+  .resena-top{display:flex; align-items:center; gap:10px; font-size:0.92rem;}
+  .resena-top .avatar{width:30px; height:30px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; flex-shrink:0;}
+  .estrellas{color:#f5a623; letter-spacing:1px; margin-left:auto; font-size:0.95rem;}
+  .estrellas i{font-style:normal; color:#d4d4d9;}
+  .resena > p{margin:8px 0 0 40px; font-size:0.93rem; color:var(--text);}
+  .respuesta{margin:10px 0 0 40px; background:var(--bg-alt); border-left:3px solid var(--brand); border-radius:10px; padding:10px 12px; font-size:0.88rem; color:var(--text-muted);
+    opacity:0; transform:translateY(8px); transition:opacity .5s ease, transform .5s ease;}
+  .resenas-feed.in-view .respuesta{opacity:1; transform:none;}
+  .resenas-feed.in-view .resena:nth-of-type(2) .respuesta{transition-delay:.5s;}
+  .resenas-feed.in-view .resena:nth-of-type(3) .respuesta{transition-delay:1s;}
+  .resenas-feed.in-view .resena:nth-of-type(4) .respuesta{transition-delay:1.5s;}
+  .etiqueta{display:block; width:max-content; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; padding:3px 9px; border-radius:999px; margin-bottom:6px;}
+  .etq-auto{background:#123B8A; color:#fff;}
+  .etq-idioma{background:#C7D8EF; color:#123B8A;}
+  .etq-humana{background:#fff4d6; color:#9a6b00;}
+  .resenas-claves{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:340px){.resenas-claves{grid-template-columns:1fr;}}
+  .clave{background:#fff; border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:12px;}
+  .clave-icono{width:44px; height:44px; border-radius:12px; background:#C7D8EF; display:inline-flex; align-items:center; justify-content:center;}
+  .clave b{display:block; font-size:1rem; color:var(--text); margin-bottom:4px;}
+  .clave span:not(.clave-icono){font-size:0.88rem; color:var(--text-muted); line-height:1.4; display:block;}
+  @media (prefers-reduced-motion: reduce){.respuesta{opacity:1; transform:none; transition:none;}}
   .automation-badge{
     display:inline-block;
     font-size:0.7rem; font-weight:700; color:#fff;
@@ -763,16 +790,43 @@
       <p class="eyebrow">Reseñas</p>
       <h2>Todas tus reseñas, respondidas</h2>
     </div>
-    <div class="service reveal reveal-1">
-      <h3>Respuestas automáticas a las de 4 y 5 estrellas</h3>
-      <p>Respondemos cada reseña nueva con el tono de tu negocio. Las de 4 y 5 estrellas se responden de forma automática cada semana. Las de 1 a 3 estrellas las revisa una persona antes de publicarlas.</p>
-      <ul>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Todas las reseñas nuevas, buenas y malas</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Al empezar, también las antiguas que se quedaron sin respuesta</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> En el idioma de cada reseña, también si te escriben turistas</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Revisión humana de las reseñas de 1 a 3 estrellas</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#123B8A" stroke-width="2.2" stroke-linecap="round"/></svg> Tono adaptado a la voz de tu negocio</li>
-      </ul>
+    <div class="resenas-grid">
+      <div class="resenas-feed reveal reveal-1" aria-label="Ejemplo ilustrativo de reseñas respondidas">
+        <span class="resena-ejemplo">Ejemplo ilustrativo</span>
+        <div class="resena">
+          <div class="resena-top"><span class="avatar" style="background:#123B8A">L</span><b>Laura M.</b><span class="estrellas">★★★★★</span></div>
+          <p>Trato genial y muy puntuales. ¡Repetiré seguro!</p>
+          <div class="respuesta"><span class="etiqueta etq-auto">Automática</span>¡Gracias, Laura! Nos alegra mucho. Te esperamos pronto.</div>
+        </div>
+        <div class="resena">
+          <div class="resena-top"><span class="avatar" style="background:#2f7a5a">J</span><b>James P.</b><span class="estrellas">★★★★★</span></div>
+          <p>Great service, very friendly staff!</p>
+          <div class="respuesta"><span class="etiqueta etq-idioma">En su idioma</span>Thank you so much, James! See you next time.</div>
+        </div>
+        <div class="resena">
+          <div class="resena-top"><span class="avatar" style="background:#a35a1f">A</span><b>Antonio R.</b><span class="estrellas">★★<i>★★★</i></span></div>
+          <p>Tuve que esperar bastante para que me atendieran.</p>
+          <div class="respuesta"><span class="etiqueta etq-humana">Revisada por una persona</span>Sentimos la espera, Antonio. Ya lo estamos mejorando y nos encantaría volver a verte.</div>
+        </div>
+      </div>
+      <div class="resenas-claves">
+        <div class="clave reveal reveal-1">
+          <span class="clave-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="#123B8A"/></svg></span>
+          <div><b>4 y 5 estrellas</b><span>Respuesta automática cada semana</span></div>
+        </div>
+        <div class="clave reveal reveal-2">
+          <span class="clave-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#123B8A"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="#123B8A"/></svg></span>
+          <div><b>1 a 3 estrellas</b><span>Las revisa una persona antes</span></div>
+        </div>
+        <div class="clave reveal reveal-3">
+          <span class="clave-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#123B8A" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" stroke="#123B8A" stroke-width="2"/></svg></span>
+          <div><b>En su idioma</b><span>También si te escriben turistas</span></div>
+        </div>
+        <div class="clave reveal reveal-3">
+          <span class="clave-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4" stroke="#123B8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="#123B8A" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <div><b>Y las antiguas</b><span>Al empezar, las que se quedaron sin respuesta</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
