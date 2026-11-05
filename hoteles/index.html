@@ -185,6 +185,29 @@
   .precio-claves{list-style:none; display:grid; gap:12px; margin-top:20px;}
   .precio-claves li{display:flex; align-items:center; gap:10px; font-weight:600; color:var(--ink); font-size:1.05rem;}
   .field select{width:100%; font:inherit; font-size:1rem; padding:12px 14px; border:1px solid #d6d6db; border-radius:12px; background:#fff; color:var(--text);}
+  /* ---------- MODELOS DE MINI WEB (carrusel) ---------- */
+  .modelos{padding-bottom:56px;}
+  .carrusel-caja{position:relative; margin-top:24px;}
+  .carrusel{overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; -webkit-overflow-scrolling:touch; cursor:grab;}
+  .carrusel::-webkit-scrollbar{display:none;}
+  .carrusel.arrastrando{cursor:grabbing; scroll-snap-type:none; scroll-behavior:auto;}
+  .carrusel.arrastrando img{pointer-events:none;}
+  .pista{--n:5; --gap:20px; display:flex; gap:var(--gap); padding:10px 0 24px;}
+  .pista figure{margin:0; flex:0 0 calc((100% - (var(--n) - 1) * var(--gap)) / var(--n)); scroll-snap-align:start; text-align:center;}
+  .pista img{width:100%; height:auto; border-radius:28px; border:7px solid var(--ink); box-shadow:0 18px 36px rgba(11,29,51,.18); background:#000; user-select:none; -webkit-user-drag:none;}
+  .pista figcaption{margin-top:12px; font-weight:600; color:var(--brand); font-size:0.95rem;}
+  .flecha{position:absolute; top:42%; transform:translateY(-50%); z-index:3; width:46px; height:46px; border-radius:50%; border:0; background:var(--brand); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(18,59,138,.3); transition:opacity .2s ease, transform .2s ease;}
+  .flecha:hover{transform:translateY(-50%) scale(1.06);}
+  .flecha[disabled]{opacity:0; pointer-events:none;}
+  .flecha.izq{left:-8px;} .flecha.der{right:-8px;}
+  .modelos-nota{text-align:center; color:var(--text-muted); font-size:0.9rem; padding:0 16px;}
+  @media (max-width:1000px){.pista{--n:3;}}
+  @media (max-width:640px){
+    .pista{--n:1.8; --gap:14px;}
+    .pista figure{scroll-snap-align:center;}
+    .flecha{width:38px; height:38px; top:40%;}
+    .flecha.izq{left:4px;} .flecha.der{right:4px;}
+  }
 </style>
 </head>
 <body>
@@ -259,6 +282,30 @@
       <div class="step p3d"><h3>El huésped acerca el móvil</h3><p>Se abre al momento, sin apps ni códigos.</p></div>
     </div>
   </div>
+</section>
+
+<section class="modelos">
+  <div class="wrap">
+    <h2 class="sec-title">Cada mini web, con el estilo de tu alojamiento</h2>
+  </div>
+  <div class="wrap carrusel-caja">
+    <button type="button" class="flecha izq" aria-label="Ver modelos anteriores"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="carrusel" tabindex="0" aria-label="Ejemplos de mini webs; desliza para ver más">
+    <div class="pista">
+        <figure><img src="modelos/glamping.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para glamping, de un alojamiento inventado"><figcaption>Glamping</figcaption></figure>
+        <figure><img src="modelos/palacio.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hotel de lujo, de un alojamiento inventado"><figcaption>Hotel de lujo</figcaption></figure>
+        <figure><img src="modelos/surf.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para surf house, de un alojamiento inventado"><figcaption>Surf house</figcaption></figure>
+        <figure><img src="modelos/cortijo.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hotel con encanto, de un alojamiento inventado"><figcaption>Hotel con encanto</figcaption></figure>
+        <figure><img src="modelos/lumbre.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hostal urbano, de un alojamiento inventado"><figcaption>Hostal urbano</figcaption></figure>
+        <figure><img src="modelos/villa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para casa vacacional, de un alojamiento inventado"><figcaption>Casa vacacional</figcaption></figure>
+        <figure><img src="modelos/hotel.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hotel, de un alojamiento inventado"><figcaption>Hotel</figcaption></figure>
+        <figure><img src="modelos/rural.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para casa rural, de un alojamiento inventado"><figcaption>Casa rural</figcaption></figure>
+        <figure><img src="modelos/playa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para piso turístico, de un alojamiento inventado"><figcaption>Piso turístico</figcaption></figure>
+    </div>
+    </div>
+    <button type="button" class="flecha der" aria-label="Ver más modelos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <p class="modelos-nota">Ejemplos con alojamientos inventados. La tuya se hace con tu logo, tus colores y tu información.</p>
 </section>
 
 <section>
@@ -393,6 +440,23 @@
   window.addEventListener('scroll', function(){ if(!tick){ tick = true; requestAnimationFrame(pintar); } }, {passive:true});
   window.addEventListener('resize', function(){ medir(); pintar(); });
   window.addEventListener('load', function(){ medir(); pintar(); });
+})();
+</script>
+<script>
+// Carrusel de modelos: flechas y arrastre con el ratón (en móvil se desliza con el dedo).
+(function(){
+  var c = document.querySelector('.carrusel'); if(!c) return;
+  var izq = document.querySelector('.flecha.izq'), der = document.querySelector('.flecha.der');
+  function paso(){ var f = c.querySelector('figure'); return f ? f.getBoundingClientRect().width + 20 : 200; }
+  function estado(){ izq.disabled = c.scrollLeft < 4; der.disabled = c.scrollLeft + c.clientWidth > c.scrollWidth - 4; }
+  izq.addEventListener('click', function(){ c.scrollBy({left:-paso(), behavior:'smooth'}); });
+  der.addEventListener('click', function(){ c.scrollBy({left:paso(), behavior:'smooth'}); });
+  c.addEventListener('scroll', estado, {passive:true}); window.addEventListener('resize', estado); estado();
+  c.addEventListener('keydown', function(e){ if(e.key === 'ArrowRight'){ der.click(); e.preventDefault(); } if(e.key === 'ArrowLeft'){ izq.click(); e.preventDefault(); } });
+  var x0 = 0, s0 = 0, abajo = false, movido = false;
+  c.addEventListener('pointerdown', function(e){ if(e.pointerType !== 'mouse') return; abajo = true; movido = false; x0 = e.clientX; s0 = c.scrollLeft; });
+  window.addEventListener('pointermove', function(e){ if(!abajo) return; var dx = e.clientX - x0; if(Math.abs(dx) > 4){ movido = true; c.classList.add('arrastrando'); } c.scrollLeft = s0 - dx; });
+  window.addEventListener('pointerup', function(){ if(!abajo) return; abajo = false; if(movido){ c.classList.remove('arrastrando'); var p = paso(); c.scrollTo({left:Math.round(c.scrollLeft / p) * p, behavior:'smooth'}); } });
 })();
 </script>
 </body>
