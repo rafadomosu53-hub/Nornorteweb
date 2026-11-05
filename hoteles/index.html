@@ -185,6 +185,24 @@
   .precio-claves{list-style:none; display:grid; gap:12px; margin-top:20px;}
   .precio-claves li{display:flex; align-items:center; gap:10px; font-weight:600; color:var(--ink); font-size:1.05rem;}
   .field select{width:100%; font:inherit; font-size:1rem; padding:12px 14px; border:1px solid #d6d6db; border-radius:12px; background:#fff; color:var(--text);}
+  /* ---------- MODELOS DE MINI WEB (carrusel) ---------- */
+  .modelos{overflow:hidden; padding-bottom:56px;}
+  .carrusel{margin-top:28px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+  .pista{display:flex; gap:22px; width:max-content; padding:10px 0 24px; animation:desfile 60s linear infinite;}
+  .carrusel:hover .pista, .carrusel:focus-within .pista{animation-play-state:paused;}
+  @keyframes desfile{to{transform:translateX(calc(-50% - 11px));}}
+  .pista figure{margin:0; flex:none; width:210px; text-align:center;}
+  .pista img{width:100%; height:auto; border-radius:30px; border:8px solid var(--ink); box-shadow:0 22px 44px rgba(11,29,51,.2); background:#000;}
+  .pista figcaption{margin-top:12px; font-weight:600; color:var(--brand); font-size:0.95rem;}
+  .modelos-nota{text-align:center; color:var(--text-muted); font-size:0.9rem; padding:0 16px;}
+  /* En móvil (o con movimiento reducido): se desliza con el dedo, sin animación */
+  @media (max-width:800px), (prefers-reduced-motion: reduce){
+    .carrusel{overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; -webkit-mask-image:none; mask-image:none; padding:0 16px; scroll-padding:0 16px;}
+    .carrusel::-webkit-scrollbar{display:none;}
+    .pista{animation:none; gap:14px;}
+    .pista figure{width:58vw; max-width:230px; scroll-snap-align:center;}
+    .pista figure[aria-hidden="true"]{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -259,6 +277,35 @@
       <div class="step p3d"><h3>El huésped acerca el móvil</h3><p>Se abre al momento, sin apps ni códigos.</p></div>
     </div>
   </div>
+</section>
+
+<section class="modelos">
+  <div class="wrap">
+    <h2 class="sec-title">Cada mini web, con el estilo de tu alojamiento</h2>
+  </div>
+  <div class="carrusel" tabindex="0" aria-label="Ejemplos de mini webs; desliza para ver más">
+    <div class="pista">
+        <figure><img src="modelos/glamping.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para glamping, de un alojamiento inventado"><figcaption>Glamping</figcaption></figure>
+        <figure><img src="modelos/palacio.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hotel de lujo, de un alojamiento inventado"><figcaption>Hotel de lujo</figcaption></figure>
+        <figure><img src="modelos/surf.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para surf house, de un alojamiento inventado"><figcaption>Surf house</figcaption></figure>
+        <figure><img src="modelos/cortijo.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hotel con encanto, de un alojamiento inventado"><figcaption>Hotel con encanto</figcaption></figure>
+        <figure><img src="modelos/lumbre.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hostal urbano, de un alojamiento inventado"><figcaption>Hostal urbano</figcaption></figure>
+        <figure><img src="modelos/villa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para casa vacacional, de un alojamiento inventado"><figcaption>Casa vacacional</figcaption></figure>
+        <figure><img src="modelos/hotel.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para hotel, de un alojamiento inventado"><figcaption>Hotel</figcaption></figure>
+        <figure><img src="modelos/rural.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para casa rural, de un alojamiento inventado"><figcaption>Casa rural</figcaption></figure>
+        <figure><img src="modelos/playa.webp" width="520" height="1125" loading="lazy" decoding="async" alt="Ejemplo de mini web para piso turístico, de un alojamiento inventado"><figcaption>Piso turístico</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/glamping.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Glamping</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/palacio.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Hotel de lujo</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/surf.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Surf house</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/cortijo.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Hotel con encanto</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/lumbre.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Hostal urbano</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/villa.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Casa vacacional</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/hotel.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Hotel</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/rural.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Casa rural</figcaption></figure>
+        <figure aria-hidden="true"><img src="modelos/playa.webp" width="520" height="1125" loading="lazy" decoding="async" alt=""><figcaption>Piso turístico</figcaption></figure>
+    </div>
+  </div>
+  <p class="modelos-nota">Ejemplos con alojamientos inventados. La tuya se hace con tu logo, tus colores y tu información.</p>
 </section>
 
 <section>
