@@ -1042,7 +1042,7 @@
         <textarea id="mensaje" name="mensaje" placeholder="Ej. quiero que me encuentren antes que a mi competencia en Google Maps"></textarea>
       </div>
       <button type="submit" class="btn-submit">Enviar mensaje</button>
-      <a class="btn-wa" href="https://wa.me/34694256338?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20o%20contratar%20Nornorte.%0A%0ANombre%3A%20%0ANombre%20del%20negocio%3A%20%0ATipo%20de%20negocio%3A%20%0ADirecci%C3%B3n%20y%20localidad%20del%20negocio%3A%20%0ACorreo%20electr%C3%B3nico%3A%20%0ALo%20que%20quieras%20contarnos%3A%20" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/><path fill="#fff" d="M17.2 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2.6 1 3.1.8 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>O escríbenos por WhatsApp</a>
+      <a class="btn-wa" data-saludo="Hola, me gustaría recibir información o contratar Nornorte." data-campos='[["nombre","Nombre",true],["negocio","Nombre del negocio",true],["tipo","Tipo de negocio",true],["localidad","Dirección y localidad",true],["email","Correo electrónico",true],["mensaje","Lo que quiero contaros",false]]' href="https://wa.me/34694256338?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20o%20contratar%20Nornorte.%0A%0ANombre%3A%20%0ANombre%20del%20negocio%3A%20%0ATipo%20de%20negocio%3A%20%0ADirecci%C3%B3n%20y%20localidad%20del%20negocio%3A%20%0ACorreo%20electr%C3%B3nico%3A%20%0ALo%20que%20quieras%20contarnos%3A%20" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/><path fill="#fff" d="M17.2 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2.6 1 3.1.8 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>O escríbenos por WhatsApp</a>
       <p class="form-note">Trabajamos con negocios de toda España desde Córdoba. Te decimos en 1 día laborable si tu zona está libre y te preparamos el cálculo de lo que estás perdiendo, gratis. También puedes escribirnos a <a href="mailto:gerencia@nornorte.es" style="color:var(--accent); font-weight:600;">gerencia@nornorte.es</a> o llamarnos al <a href="tel:+34694256338" style="color:var(--accent); font-weight:600; white-space:nowrap;">694 25 63 38</a>.</p>
       <p class="form-legal">Responsable: Nornorte. Usamos tus datos solo para responder a tu consulta. Puedes acceder a ellos, corregirlos o borrarlos escribiendo a gerencia@nornorte.es. Más información en el <a href="/privacidad/">aviso de privacidad</a>.</p>
     </form>
@@ -1170,6 +1170,27 @@
     document.querySelectorAll('a[href="#preguntas"]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); abrirPanel(); }); });
     if(location.hash==='#preguntas') abrirPanel();
   })();
+</script>
+<script>
+// Botón de WhatsApp: pide rellenar el formulario y abre el chat con esos datos ya escritos.
+(function(){
+  var b=document.querySelector('.btn-wa'); if(!b) return;
+  b.addEventListener('click',function(e){
+    e.preventDefault();
+    var campos=JSON.parse(b.getAttribute('data-campos'));
+    var lineas=[b.getAttribute('data-saludo'),''];
+    for(var i=0;i<campos.length;i++){
+      var c=campos[i], el=document.getElementById(c[0]); if(!el) continue;
+      var obligatorio=c[2];
+      if(el.type==='checkbox'){ if(!el.checked){ el.setCustomValidity('Marca esta casilla para continuar.'); el.reportValidity(); el.setCustomValidity(''); return; } continue; }
+      var v=(el.value||'').trim();
+      if(obligatorio && !v){ el.setCustomValidity('Rellena este dato para escribirnos por WhatsApp.'); el.reportValidity(); el.setCustomValidity(''); el.focus(); return; }
+      if(v && !el.checkValidity()){ el.reportValidity(); el.focus(); return; }
+      if(v) lineas.push(c[1]+': '+v);
+    }
+    window.open('https://wa.me/34694256338?text='+encodeURIComponent(lineas.join('\n')),'_blank','noopener');
+  });
+})();
 </script>
 </body>
 </html>
