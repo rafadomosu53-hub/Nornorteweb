@@ -630,6 +630,77 @@
   .footer-logo{height:26px; width:auto; vertical-align:middle; margin-right:10px;}
   .footer-sectores{font-size:0.78rem; color:var(--text-muted); padding-top:14px; margin-top:14px; margin-bottom:10px; border-top:1px solid var(--line);}
   .footer-sectores a{color:inherit; text-decoration:none;} .footer-sectores a:hover{color:var(--ink); text-decoration:underline;}
+
+  /* Antes y después, nota 0-100, reseñas en Instagram */
+
+.mk-ad{padding:96px 0;background:var(--bg)}
+.mk-ad .pares{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:center;max-width:960px;margin:0 auto}
+.mk-ad .mapa{background:#fff;border-radius:24px;padding:22px;box-shadow:0 20px 50px rgba(13,13,15,.08);position:relative}
+.mk-ad .mapa h3{font-size:1.05rem;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.mk-ad .tag{font-size:.72rem;font-weight:700;border-radius:999px;padding:4px 10px}
+.mk-ad .tag.mal{background:#fde8e6;color:#a3301f}.mk-ad .tag.bien{background:#e3f4ea;color:#1f7a45}
+.mk-ad .rej{aspect-ratio:1;border-radius:16px;background:
+ linear-gradient(#e9eef5 1px,transparent 1px) 0 0/20% 20%,linear-gradient(90deg,#e9eef5 1px,transparent 1px) 0 0/20% 20%,#f4f7fb;
+ display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:6px;position:relative}
+.mk-ad .p{display:flex;align-items:center;justify-content:center}
+.mk-ad .p span{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:#fff;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.mk-ad .r{background:#d9483b}.mk-ad .a{background:#e8a325}.mk-ad .v{background:#2f9e5b}
+.mk-ad .centro span{outline:3px solid #123B8A;outline-offset:3px}
+.mk-ad .pie{margin-top:14px;font-size:.95rem;color:var(--text-muted)}
+.mk-ad .pie b{color:var(--ink);font-size:1.4rem;margin-right:6px}
+.mk-ad .mk-flecha{width:56px;height:56px;border-radius:50%;background:#123B8A;color:#fff;display:flex;align-items:center;justify-content:center}
+.mk-ad .leyenda{display:flex;gap:18px;justify-content:center;margin-top:30px;font-size:.88rem;color:var(--text-muted)}
+.mk-ad .leyenda i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.mk-ad .nota{text-align:center;font-size:.8rem;color:var(--text-muted);margin-top:14px}
+.mk-ad .ej{position:absolute;top:-12px;right:18px;background:#123B8A;color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:5px 11px}
+@media (max-width:760px){.mk-ad .pares{grid-template-columns:1fr}.mk-ad .mk-flecha{transform:rotate(90deg);margin:0 auto}.mk-ad .p span{width:34px;height:34px;font-size:.8rem}}
+
+.mk-nota{padding:96px 0;background:var(--bg)}
+.mk-nota .caja{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;max-width:980px;margin:0 auto;background:#fff;border-radius:28px;padding:44px;box-shadow:0 20px 50px rgba(13,13,15,.08);position:relative}
+.mk-nota .ej{position:absolute;top:-12px;right:24px;background:#123B8A;color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:5px 11px}
+.mk-nota .anillo{width:240px;height:240px;margin:0 auto;border-radius:50%;background:conic-gradient(#123B8A 0 223deg,#E3ECF7 223deg 360deg);display:flex;align-items:center;justify-content:center}
+.mk-nota .anillo div{width:190px;height:190px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mk-nota .anillo b{font-size:4rem;line-height:1;color:var(--ink);letter-spacing:-.03em}
+.mk-nota .anillo small{color:var(--text-muted);font-size:.95rem;margin-top:4px}
+.mk-nota .nivel{display:block;text-align:center;margin-top:18px}
+.mk-nota .nivel span{background:#123B8A;color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;font-size:.95rem}
+.mk-nota .escalera{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:28px}
+.mk-nota .esc{border-radius:14px;padding:12px 10px;text-align:center;background:#f4f7fb;color:var(--text-muted);font-size:.82rem;font-weight:600}
+.mk-nota .esc b{display:block;font-size:.72rem;font-weight:600;opacity:.8;margin-bottom:3px}
+.mk-nota .esc.on{background:#123B8A;color:#fff;box-shadow:0 8px 20px rgba(18,59,138,.3)}
+.mk-nota .barra{margin:12px 0}
+.mk-nota .barra div{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:6px;color:var(--ink);font-weight:600}
+.mk-nota .barra div span{color:var(--text-muted);font-weight:500}
+.mk-nota .barra i{display:block;height:10px;border-radius:99px;background:#E3ECF7;overflow:hidden}
+.mk-nota .barra i em{display:block;height:100%;border-radius:99px;background:#123B8A}
+.mk-nota .barra.flojo i em{background:#e8a325}
+.mk-nota .cta{text-align:center;margin-top:36px}
+.mk-nota .cta a{display:inline-block;background:#123B8A;color:#fff;border-radius:999px;padding:14px 26px;font-weight:600;text-decoration:none}
+@media (max-width:820px){.mk-nota .caja{grid-template-columns:1fr;padding:28px 20px}.mk-nota .escalera{grid-template-columns:repeat(2,1fr)}.mk-nota .anillo{width:200px;height:200px}.mk-nota .anillo div{width:158px;height:158px}.mk-nota .anillo b{font-size:3.2rem}}
+
+.mk-ig{padding:40px 0 96px;background:var(--bg-alt)}
+.mk-ig .fila{display:grid;grid-template-columns:1fr auto 1fr;gap:36px;align-items:center;max-width:940px;margin:0 auto}
+.mk-ig .resena-g{background:#fff;border-radius:22px;padding:24px;box-shadow:0 20px 50px rgba(13,13,15,.08);position:relative}
+.mk-ig .resena-g .top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.mk-ig .av{width:36px;height:36px;border-radius:50%;background:#2f7a5a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.mk-ig .st{color:#f5a623;letter-spacing:2px;margin-left:auto}
+.mk-ig .g{font-size:.78rem;color:var(--text-muted);margin-top:12px;display:flex;align-items:center;gap:6px}
+.mk-ig .boton{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:#E3ECF7;color:#123B8A;border-radius:999px;padding:9px 14px;font-weight:700;font-size:.85rem}
+.mk-ig .mk-flecha{width:56px;height:56px;border-radius:50%;background:#123B8A;display:flex;align-items:center;justify-content:center}
+.mk-ig .movil{width:280px;margin:0 auto;border-radius:38px;border:10px solid #0d0d0f;background:#fff;overflow:hidden;box-shadow:0 30px 60px rgba(11,29,51,.25)}
+.mk-ig .ig-top{display:flex;align-items:center;gap:8px;padding:12px 12px 10px;font-size:.8rem;font-weight:700}
+.mk-ig .ig-top i{width:28px;height:28px;border-radius:50%;background:linear-gradient(45deg,#f9a03f,#d62976,#962fbf);padding:2px}
+.mk-ig .ig-top i em{display:block;width:100%;height:100%;border-radius:50%;background:#7a2e2e;border:2px solid #fff}
+.mk-ig .post{aspect-ratio:1;background:#7a2e2e;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:26px;position:relative}
+.mk-ig .post .s{color:#ffd27a;font-size:1.3rem;letter-spacing:3px}
+.mk-ig .post q{font-size:1.25rem;font-weight:700;line-height:1.25;margin:12px 0;quotes:"«" "»"}
+.mk-ig .post small{opacity:.85;font-size:.8rem}
+.mk-ig .post .marca{position:absolute;bottom:16px;left:26px;right:26px;display:flex;justify-content:space-between;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.mk-ig .ig-bar{display:flex;gap:14px;padding:10px 12px 14px}
+.mk-ig .ej{position:absolute;top:-12px;right:18px;background:#123B8A;color:#fff;font-size:.72rem;font-weight:700;border-radius:999px;padding:5px 11px}
+.mk-ig .claves{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.mk-ig .claves span{background:#fff;border-radius:999px;padding:10px 18px;font-weight:600;font-size:.92rem;box-shadow:0 6px 16px rgba(13,13,15,.06)}
+@media (max-width:760px){.mk-ig .fila{grid-template-columns:1fr}.mk-ig .mk-flecha{transform:rotate(90deg);margin:0 auto}}
 </style>
 </head>
 <body>
@@ -692,6 +763,23 @@
   </div>
 </header>
 
+<section class="mk-ad" id="antes-despues">
+ <div class="wrap">
+  <div class="section-head reveal"><p class="eyebrow">Antes y después</p><h2>Del rojo al verde, calle a calle</h2></div>
+  <div class="pares reveal reveal-1">
+   <div class="mapa"><span class="ej">Ejemplo ilustrativo</span><h3>Antes <span class="tag mal">Casi invisible</span></h3>
+    <div class="rej" aria-hidden="true"><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">18</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">14</span></div><div class="p"><span class="a">9</span></div><div class="p"><span class="r">12</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">19</span></div><div class="p"><span class="a">7</span></div><div class="p centro"><span class="v">3</span></div><div class="p"><span class="a">6</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">11</span></div><div class="p"><span class="v">2</span></div><div class="p"><span class="a">9</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">15</span></div><div class="p"><span class="r">20+</span></div><div class="p"><span class="r">20+</span></div></div>
+    <p class="pie"><b>2 de 25</b>zonas en el top 3</p></div>
+   <div class="mk-flecha" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+   <div class="mapa"><h3>Después <span class="tag bien">Te eligen a ti</span></h3>
+    <div class="rej" aria-hidden="true"><div class="p"><span class="a">9</span></div><div class="p"><span class="a">5</span></div><div class="p"><span class="a">4</span></div><div class="p"><span class="a">6</span></div><div class="p"><span class="r">12</span></div><div class="p"><span class="a">4</span></div><div class="p"><span class="v">2</span></div><div class="p"><span class="v">2</span></div><div class="p"><span class="v">3</span></div><div class="p"><span class="a">7</span></div><div class="p"><span class="v">3</span></div><div class="p"><span class="v">1</span></div><div class="p centro"><span class="v">1</span></div><div class="p"><span class="v">1</span></div><div class="p"><span class="a">4</span></div><div class="p"><span class="a">5</span></div><div class="p"><span class="v">2</span></div><div class="p"><span class="v">1</span></div><div class="p"><span class="v">2</span></div><div class="p"><span class="a">6</span></div><div class="p"><span class="r">11</span></div><div class="p"><span class="a">4</span></div><div class="p"><span class="v">3</span></div><div class="p"><span class="a">5</span></div><div class="p"><span class="r">13</span></div></div>
+    <p class="pie"><b>11 de 25</b>zonas en el top 3</p></div>
+  </div>
+  <div class="leyenda"><span><i class="v"></i>Top 3</span><span><i class="a"></i>Puesto 4 a 10</span><span><i class="r"></i>Fuera de la primera página</span></div>
+  <p class="nota">Datos inventados para enseñar cómo se lee el mapa. Nadie puede garantizar posiciones en Google.</p>
+ </div>
+</section>
+
 <section class="perdidas" id="dinero">
   <div class="wrap">
     <div class="section-head reveal">
@@ -724,6 +812,23 @@
       <a href="#contacto" class="pill">Calcular lo que estoy perdiendo</a>
     </div>
   </div>
+</section>
+
+<section class="mk-nota" id="nota">
+ <div class="wrap">
+  <div class="section-head reveal"><p class="eyebrow">Escaneo gratis</p><h2>¿Qué nota tiene tu negocio en Google Maps?</h2></div>
+  <div class="caja reveal reveal-1"><span class="ej">Ejemplo ilustrativo</span>
+   <div><div class="anillo" role="img" aria-label="Ejemplo: nota 62 de 100"><div><b>62</b><small>de 100</small></div></div><span class="nivel"><span>En la pelea</span></span></div>
+   <div>
+    <div class="escalera"><div class="esc"><b>0-30</b>Invisible</div><div class="esc"><b>31-55</b>Asomando</div><div class="esc on"><b>56-80</b>En la pelea</div><div class="esc"><b>81-100</b>Líder de tu zona</div></div>
+    <div class="barra"><div>Reseñas <span>8/10</span></div><i><em style="width:80%"></em></i></div>
+    <div class="barra"><div>Ficha completa <span>7/10</span></div><i><em style="width:70%"></em></i></div>
+    <div class="barra flojo"><div>Fotos <span>4/10</span></div><i><em style="width:40%"></em></i></div>
+    <div class="barra flojo"><div>Actividad <span>3/10</span></div><i><em style="width:30%"></em></i></div>
+   </div>
+  </div>
+  <div class="cta"><a href="https://panel.nornorte.es/escaneo">Saca tu nota gratis</a></div>
+ </div>
 </section>
 
 <section class="services" id="servicios">
@@ -882,6 +987,27 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="mk-ig" id="resenas-instagram">
+ <div class="wrap">
+  <div class="section-head reveal"><p class="eyebrow">Reseñas en redes</p><h2>Tus mejores reseñas, también en Instagram</h2></div>
+  <div class="fila reveal reveal-1">
+   <div class="resena-g"><span class="ej">Ejemplo ilustrativo</span>
+    <div class="top"><span class="av">M</span><b>Marta G.</b><span class="st">★★★★★</span></div>
+    <p>Las mejores croquetas de Córdoba y un trato de diez. Volveremos seguro.</p>
+    <p class="g">Reseña en Google · hace 2 días</p>
+    <span class="boton"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#123B8A" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#123B8A"/></svg>Crear imagen para Instagram</span>
+   </div>
+   <div class="mk-flecha" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+   <div class="movil" aria-hidden="true">
+    <div class="ig-top"><i><em></em></i>tabernaelpatio</div>
+    <div class="post"><span class="s">★★★★★</span><q>Las mejores croquetas de Córdoba y un trato de diez.</q><small>Marta G., en Google</small><div class="marca"><span>Taberna El Patio</span><span>Gracias ♥</span></div></div>
+    <div class="ig-bar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d0d0f" stroke-width="2"><path d="M12 21s-7-4.5-9.3-9A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 9.3 6C19 16.5 12 21 12 21z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d0d0f" stroke-width="2"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d0d0f" stroke-width="2" stroke-linejoin="round"><path d="M22 3L11 13M22 3l-7 18-4-8-8-4 19-6z"/></svg></div>
+   </div>
+  </div>
+  <div class="claves"><span>Con tus colores y tu logo</span><span>Lista en un clic</span><span>Solo reseñas de 5★</span></div>
+ </div>
 </section>
 
 <section class="ia" id="ia">
