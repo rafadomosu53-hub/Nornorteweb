@@ -210,6 +210,28 @@
   }
   .btn-wa{display:flex; align-items:center; justify-content:center; gap:10px; background:#fff; color:var(--text); border:1.5px solid var(--line); font-weight:600; font-size:1rem; padding:13px 28px; border-radius:999px; text-decoration:none; transition:border-color 0.15s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);}
   .btn-wa:hover{border-color:#25D366; transform:translateY(-2px);}
+
+  /* Reseñas dentro de la mini web */
+
+.mk-hr .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.mk-hr .movil{width:300px;margin:0 auto;border-radius:40px;border:10px solid #0d0d0f;background:#f6f1e7;overflow:hidden;box-shadow:0 30px 60px rgba(11,29,51,.25);position:relative}
+.mk-hr .cab{background:#3d5a40;color:#fff;padding:22px 18px 18px}
+.mk-hr .cab small{opacity:.8;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.mk-hr .cab h4{font-size:1.15rem;margin-top:4px;font-family:Georgia,serif;font-weight:600}
+.mk-hr .nota-g{display:flex;align-items:center;gap:10px;background:#fff;margin:14px;border-radius:16px;padding:12px 14px}
+.mk-hr .nota-g b{font-size:1.7rem;color:#1d1d1f}
+.mk-hr .nota-g .s{color:#f5a623;letter-spacing:1px;font-size:.9rem}
+.mk-hr .nota-g small{display:block;color:#6e6e73;font-size:.72rem}
+.mk-hr .rv{background:#fff;margin:0 14px 10px;border-radius:14px;padding:12px 14px;font-size:.8rem;color:#1d1d1f}
+.mk-hr .rv b{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px}
+.mk-hr .rv b span{color:#f5a623}
+.mk-hr .rv .en{display:inline-block;font-size:.65rem;font-weight:700;background:#eef2ee;color:#3d5a40;border-radius:99px;padding:2px 7px;margin-top:6px}
+.mk-hr .btn{display:block;margin:6px 14px 18px;background:#3d5a40;color:#fff;text-align:center;border-radius:999px;padding:11px;font-weight:700;font-size:.85rem}
+.mk-hr .ej{position:absolute;top:10px;right:10px;background:#123B8A;color:#fff;font-size:.62rem;font-weight:700;border-radius:999px;padding:4px 9px;z-index:2}
+.mk-hr .puntos{list-style:none;display:grid;gap:14px;margin-top:8px}
+.mk-hr .puntos li{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px;font-weight:600;color:var(--ink)}
+.mk-hr .puntos i{width:40px;height:40px;border-radius:12px;background:var(--brand-soft);display:flex;align-items:center;justify-content:center;flex:none;font-style:normal;font-size:1.1rem}
+@media (max-width:800px){.mk-hr .grid{grid-template-columns:1fr;gap:36px}}
 </style>
 </head>
 <body>
@@ -312,6 +334,28 @@
   <p class="modelos-nota">Ejemplos con alojamientos inventados. La tuya se hace con tu logo, tus colores y tu información.</p>
 </section>
 
+<section class="alt mk-hr" id="resenas-mini-web">
+ <div class="wrap grid">
+  <div>
+   <h2 class="sec-title">Tus mejores reseñas, dentro de la mini web</h2>
+   <ul class="puntos">
+    <li><i aria-hidden="true" style="color:#123B8A">★</i>Tu nota de Google, siempre al día</li>
+    <li><i aria-hidden="true" style="color:#123B8A;font-size:1.4rem">❝</i>Las últimas reseñas buenas, solas</li>
+    <li><i aria-hidden="true" style="font-size:.8rem;font-weight:800;color:#123B8A">EN</i>En el idioma del huésped</li>
+    <li><i aria-hidden="true" style="color:#123B8A">✓</i>Un botón para dejar la suya</li>
+   </ul>
+  </div>
+  <div class="movil" role="img" aria-label="Ejemplo de mini web con las reseñas de Google del hotel"><span class="ej">Ejemplo ilustrativo</span>
+   <div class="cab"><small>Opiniones</small><h4>Hotel Mirador de la Subbética</h4></div>
+   <div class="nota-g"><b>4,8</b><div><span class="s">★★★★★</span><small>312 reseñas en Google</small></div></div>
+   <div class="rv"><b>Lucía P. <span>★★★★★</span></b>Las vistas desde la habitación, increíbles. El desayuno, de diez.</div>
+   <div class="rv"><b>Thomas K. <span>★★★★★</span></b>Wonderful stay, very kind staff and a great breakfast.<br><span class="en">EN</span></div>
+   <div class="rv"><b>Javier M. <span>★★★★★</span></b>Tranquilidad total. Repetiremos en primavera.</div>
+   <span class="btn">Deja tu reseña en Google</span>
+  </div>
+ </div>
+</section>
+
 <section>
   <div class="wrap">
     <h2 class="sec-title">Qué ve el huésped</h2>
@@ -331,6 +375,8 @@
     </div>
   </div>
 </section>
+
+
 
 <section class="alt" id="precio">
   <div class="wrap grid2">
