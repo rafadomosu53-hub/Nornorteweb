@@ -408,12 +408,24 @@
   }
   .service li:first-child{border-top:none;}
   .service li svg{flex-shrink:0; margin-top:3px;}
-  .nfc-banner{display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center; margin-top:24px; background:var(--bg-alt); border-radius:var(--radius); padding:20px 40px 20px 20px;}
-  .nfc-foto img{display:block; width:100%; height:auto; border-radius:16px;}
-  .nfc-banner h3{font-size:clamp(1.4rem,2.4vw,1.9rem); margin:6px 0 10px;}
-  .nfc-banner-texto > p:last-child{color:var(--text-muted); font-size:1.02rem;}
-  @media (max-width:760px){.nfc-banner{grid-template-columns:1fr; gap:20px; padding:16px 16px 26px;}}
-  .nfc-sello{display:inline-flex; align-items:center; gap:8px; background:var(--brand); color:#fff; font-weight:700; font-size:0.95rem; padding:9px 16px; border-radius:999px; margin-bottom:14px;}
+  .nfc-modelos{margin-top:40px;}
+  .nfc-modelos h3{display:flex; align-items:center; justify-content:center; gap:8px; font-size:1.15rem; color:var(--brand); text-align:center;}
+  .carrusel-caja{position:relative; margin-top:18px;}
+  .carrusel{overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; -webkit-overflow-scrolling:touch; cursor:grab;}
+  .carrusel::-webkit-scrollbar{display:none;}
+  .carrusel.arrastrando{cursor:grabbing; scroll-snap-type:none; scroll-behavior:auto;}
+  .carrusel.arrastrando img{pointer-events:none;}
+  .pista{--n:4; --gap:20px; display:flex; gap:var(--gap); padding:8px 0 20px;}
+  .pista figure{margin:0; flex:0 0 calc((100% - (var(--n) - 1) * var(--gap)) / var(--n)); scroll-snap-align:start; text-align:center;}
+  .pista img{display:block; width:100%; height:auto; aspect-ratio:398/464; object-fit:cover; border-radius:16px; box-shadow:0 10px 24px rgba(11,29,51,.12); user-select:none; -webkit-user-drag:none;}
+  .pista figcaption{margin-top:12px; font-weight:600; color:var(--brand); font-size:0.95rem;}
+  .flecha{position:absolute; top:42%; transform:translateY(-50%); z-index:3; width:46px; height:46px; border-radius:50%; border:0; background:var(--brand); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 20px rgba(18,59,138,.3); transition:opacity .2s ease, transform .2s ease;}
+  .flecha:hover{transform:translateY(-50%) scale(1.06);}
+  .flecha[disabled]{opacity:0; pointer-events:none;}
+  .flecha.izq{left:-8px;} .flecha.der{right:-8px;}
+  .modelos-nota{text-align:center; color:var(--text-muted); font-size:0.9rem;}
+  @media (max-width:1000px){.pista{--n:3;}}
+  @media (max-width:640px){.pista{--n:1.6; --gap:14px;} .pista figure{scroll-snap-align:center;} .flecha{width:38px; height:38px; top:40%;} .flecha.izq{left:4px;} .flecha.der{right:4px;}}
 
   /* ---------- PROCESS ---------- */
 
@@ -573,13 +585,11 @@
   .perdida.p3d:nth-child(odd){--ry:16deg; transform-origin:100% 100%;}
   .perdida.p3d:nth-child(even){--ry:-16deg; transform-origin:0% 100%;}
   .navegador.p3d{--rx:32deg; --ty:40px; --bl:4px;}
-  .nfc-foto.p3d{--rx:10deg; --ry:18deg; --bl:4px; transform-origin:0% 50%;}
   .moviles figure.p3d:nth-child(1){--ry:28deg; --rx:8deg; transform-origin:100% 50%;}
   .moviles figure.p3d:nth-child(2){--rx:26deg;}
   .moviles figure.p3d:nth-child(3){--ry:-28deg; --rx:8deg; transform-origin:0% 50%;}
   @media (max-width:760px){
     .perdida.p3d:nth-child(n){--ry:0deg; --rx:30deg; transform-origin:50% 100%;}
-    .nfc-foto.p3d{--ry:0deg; --rx:22deg; transform-origin:50% 100%;}
   }
   @media (prefers-reduced-motion: reduce){.p3d{transform:none !important; filter:none !important; opacity:1 !important;}}
   .reveal-1{transition-delay:0.05s;}
@@ -756,16 +766,27 @@
         </ul>
       </div>
     </div>
-    <div class="nfc-banner reveal">
-      <picture class="nfc-foto p3d">
-        <source srcset="/img/soportes-nfc.webp" type="image/webp">
-        <img src="/img/soportes-nfc.jpg" alt="Soportes NFC para reseñas de Google" width="1000" height="750" loading="lazy">
-      </picture>
-      <div class="nfc-banner-texto">
-        <p class="nfc-sello"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.5-.8L12 3z" fill="currentColor"/></svg> Personalizada a tu gusto</p>
-        <h3>Tu logo, tus colores y tu mensaje</h3>
-        <p>Tarjeta adhesiva o de sobremesa, diseñada para tu negocio.</p>
+    <div class="nfc-modelos reveal">
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.5-.8L12 3z" fill="currentColor"/></svg> Con tu logo y tus colores</h3>
+      <div class="carrusel-caja">
+        <button type="button" class="flecha izq" aria-label="Ver tarjetas anteriores"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="carrusel" tabindex="0" aria-label="Ejemplos de tarjetas NFC; desliza para ver más">
+          <div class="pista">
+            <figure><img src="/img/tarjetas/hotel.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: hotel, negocio inventado"><figcaption>Hotel</figcaption></figure>
+            <figure><img src="/img/tarjetas/taller.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: taller, negocio inventado"><figcaption>Taller</figcaption></figure>
+            <figure><img src="/img/tarjetas/tienda-ropa.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: tienda de ropa, negocio inventado"><figcaption>Tienda de ropa</figcaption></figure>
+            <figure><img src="/img/tarjetas/restaurante.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: restaurante, negocio inventado"><figcaption>Restaurante</figcaption></figure>
+            <figure><img src="/img/tarjetas/clinica-dental.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: clínica dental, negocio inventado"><figcaption>Clínica dental</figcaption></figure>
+            <figure><img src="/img/tarjetas/veterinaria.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: veterinaria, negocio inventado"><figcaption>Veterinaria</figcaption></figure>
+            <figure><img src="/img/tarjetas/farmacia.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: farmacia, negocio inventado"><figcaption>Farmacia</figcaption></figure>
+            <figure><img src="/img/tarjetas/fisioterapia.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: fisioterapia, negocio inventado"><figcaption>Fisioterapia</figcaption></figure>
+            <figure><img src="/img/tarjetas/vinoteca.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: vinoteca, negocio inventado"><figcaption>Vinoteca</figcaption></figure>
+            <figure><img src="/img/tarjetas/inmobiliaria.webp" width="398" height="464" loading="lazy" decoding="async" alt="Ejemplo de tarjeta NFC para reseñas: inmobiliaria, negocio inventado"><figcaption>Inmobiliaria</figcaption></figure>
+          </div>
+        </div>
+        <button type="button" class="flecha der" aria-label="Ver más tarjetas"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
+      <p class="modelos-nota">Ejemplos con negocios inventados.</p>
     </div>
   </div>
 </section>
@@ -1189,6 +1210,23 @@
     }
     window.open('https://wa.me/34694256338?text='+encodeURIComponent(lineas.join('\n')),'_blank','noopener');
   });
+})();
+</script>
+<script>
+// Carrusel de tarjetas NFC: flechas y arrastre con el ratón (en móvil se desliza con el dedo).
+(function(){
+  var c = document.querySelector('.carrusel'); if(!c) return;
+  var izq = document.querySelector('.flecha.izq'), der = document.querySelector('.flecha.der');
+  function paso(){ var f = c.querySelector('figure'); return f ? f.getBoundingClientRect().width + 20 : 200; }
+  function estado(){ izq.disabled = c.scrollLeft < 4; der.disabled = c.scrollLeft + c.clientWidth > c.scrollWidth - 4; }
+  izq.addEventListener('click', function(){ c.scrollBy({left:-paso(), behavior:'smooth'}); });
+  der.addEventListener('click', function(){ c.scrollBy({left:paso(), behavior:'smooth'}); });
+  c.addEventListener('scroll', estado, {passive:true}); window.addEventListener('resize', estado); estado();
+  c.addEventListener('keydown', function(e){ if(e.key === 'ArrowRight'){ der.click(); e.preventDefault(); } if(e.key === 'ArrowLeft'){ izq.click(); e.preventDefault(); } });
+  var x0 = 0, s0 = 0, abajo = false, movido = false;
+  c.addEventListener('pointerdown', function(e){ if(e.pointerType !== 'mouse') return; abajo = true; movido = false; x0 = e.clientX; s0 = c.scrollLeft; });
+  window.addEventListener('pointermove', function(e){ if(!abajo) return; var dx = e.clientX - x0; if(Math.abs(dx) > 4){ movido = true; c.classList.add('arrastrando'); } c.scrollLeft = s0 - dx; });
+  window.addEventListener('pointerup', function(){ if(!abajo) return; abajo = false; if(movido){ c.classList.remove('arrastrando'); var p = paso(); c.scrollTo({left:Math.round(c.scrollLeft / p) * p, behavior:'smooth'}); } });
 })();
 </script>
 </body>
